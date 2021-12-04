@@ -1,4 +1,5 @@
 import pdb
+from controllers.member_controller import update
 from models.booking import Booking
 from models.member import Member
 from models.fit_class import Fit_class
@@ -19,3 +20,10 @@ fit_class_repository.save(fit_class1)
 
 booking1 = Booking(member1, fit_class1, "19:05_03/12/2021", "Peter")
 booking_repository.save(booking1)
+
+#Test select functions
+print(member_repository.select(1).__dict__)
+
+#test update functions
+updatedMem1 = Member("Whyte", "Goodman", "01/01/1975", "Mr", "he/him", "Loves milk", 1)
+member_repository.update(updatedMem1)

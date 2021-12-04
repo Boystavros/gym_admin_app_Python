@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.member import Member
 
+#CREATE
 def save(member):
     sql = "INSERT INTO members (first_name, last_name, dob, title, pronouns, notes) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
     values = [member.first_name, member.last_name, member.dob, member.title, member.pronouns, member.notes]
@@ -9,6 +10,7 @@ def save(member):
     member.id = id
     return member
 
+#READ
 def select_all():
     members = []
 
@@ -30,7 +32,21 @@ def select(id):
         member = Member(result['first_name'], result['last_name'], result['dob'], result['title'], result['pronouns'], result['notes'], result['id'])
     return member
 
+#UPDATE
+def update(member):
+    sql = "UPDATE members SET (first_name, last_name, dob, title, pronouns, notes) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [member.first_name, member.last_name, member.dob, member.title, member.pronouns, member.notes, member.id]
+    run_sql(sql, values)
 
+#DELETE
+def delete(id):
+    sql = "DELETE  FROM members WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+def delete_all():
+    sql = "DELETE  FROM members"
+    run_sql(sql)
 
 
 

@@ -2,16 +2,17 @@
 
 {% block content %}
 
-    <h1>Member details</h1>
+    <h1>Member details</h1><br> <!-- Remove this space when doing CSS -->
 
+    <p>Membership number: {{ member.id }}</p>
     <p>Title: {{ member.title }}</p>
     <p>Pronouns: {{ member.pronouns }}</p>
     <p>{{ member.last_name }}, {{ member.first_name }}</p>
     <p>Date of birth: {{ member.dob }}</p>
     <p>Notes: {{ member.notes }}</p>
 
-    <button><a href="/members/update/{{ member.id }}"></a>Update details</button>
-    <button><a href="/bookings/edit_member_bookings/{{ member.id }}"></a>Edit bookings</button>
+    <a href="/members/{{ member.id }}/edit"><button>Edit details</button></a>
+    <a href="/members/{{ member.id }}/bookings"><button>Member bookings</button></a>
     
 
 {% endblock content %}
