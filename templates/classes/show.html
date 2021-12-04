@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <h1>Class details</h1>
+
+    <p>Name: {{ fit_class.name }}</p>
+    <p>Category: {{ fit_class.category }}</p>
+    <p>Instructor: {{ fit_class.instructor }}</p>
+    <p>Date: {{ fit_class.date }}</p>
+    <p>Time: {{ fit_class.time }}</p>
+    <p>Location: {{ fit_class.location }}</p>
+
+    <a href="/classes/{{ fit_class.id }}/edit"><button>Edit details</button></a>
+    <a href="/classes/{{ fit_class.id }}/delete"><button>Delete ❌ </button></a>
+
+    <form action="/classes/add_member" method="post">
+        <label for="member">Book members onto class:</label>
+        <select name="member" id="member">
+            <option value="member1">member1</option>
+            <option value="member2">Member2</option>
+        </select>
+        <button type="submit">Book member on class</button>
+    </form>
+
+{% endblock content %}

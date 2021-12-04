@@ -23,3 +23,14 @@ def add_class():
     fit_class_repository.save(fit_class)
     return redirect(url_for('.fit_classes'))
 
+@fit_classes_blueprint.route("/classes/<id>")
+def show(id):
+    fit_class = fit_class_repository.select(id)
+    return render_template("classes/show.html", fit_class=fit_class)
+
+@fit_classes_blueprint.route("/classes/<id>/delete")
+def delete(id):
+    fit_class_repository.delete(id)
+    return redirect(url_for(".fit_classes"))
+
+
