@@ -7,7 +7,8 @@ fit_classes_blueprint = Blueprint("fit_classes", __name__)
 
 @fit_classes_blueprint.route("/fit_classes")
 def fit_classes():
-    return render_template("/classes/index.html")
+    fit_classes = fit_class_repository.select_all()
+    return render_template("/classes/index.html", fit_classes=fit_classes)
 
 @fit_classes_blueprint.route("/fit_classes/add_fit_class")
 def add_fit_class():

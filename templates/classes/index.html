@@ -4,6 +4,14 @@
     
     <h1>Classes</h1>
 
-    <button class="add_new_fit_class"><a href="/fit_classes/add_fit_class">Add new class</a></button>
+   <a href="/fit_classes/add_fit_class"><button class="add_new_fit_class">Add new class</button></a>
+
+   <ul>
+    {% for fit_class in fit_classes %}
+        <li>
+            <a href="/classes/{{ fit_class.id }}">{{ fit_class.name }}</a>
+        </li>    
+    {% endfor %}
+    </ul>
 
 {% endblock content %}

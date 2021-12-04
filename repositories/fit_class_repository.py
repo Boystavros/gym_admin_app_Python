@@ -13,4 +13,19 @@ def save(fit_class):
 
 #READ
 def select_all():
+    fit_classes = []
+
     sql = "SELECT * FROM fit_classes"
+    results = run_sql(sql)
+
+    for row in results:
+        name = row['name']
+        category = row['category']
+        instructor = row['instructor']
+        date = row['date']
+        time = row['time']
+        location = row['location']
+        id = row['id']
+        fit_class = Fit_class(name, category, instructor, date, time, location, id)
+        fit_classes.append(fit_class)
+    return fit_classes
