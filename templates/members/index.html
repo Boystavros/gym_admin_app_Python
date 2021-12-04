@@ -5,4 +5,10 @@
 
     <button class="add_member_button"><a href="/members/add_member">Add new member</a></button>
 
+    <h2>Members:</h2>
+    <ul>
+        {% for member in members %}
+            <li>{{ member.last_name }}, {{ member.first_name }}</li>
+        {% endfor %}
+    </ul>
 {% endblock content %}

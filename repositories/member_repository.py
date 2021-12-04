@@ -9,5 +9,16 @@ def save(member):
     member.id = id
     return member
 
+def select_all():
+    members = []
+
+    sql = "SELECT * FROM members"
+    results = run_sql(sql)
+
+    for row in results:
+        member = Member(row['first_name'], row['last_name'], row['dob'], row['title'], row['pronouns'], row['notes'], row['id'])
+        members.append(member)
+    return members
+
 
 

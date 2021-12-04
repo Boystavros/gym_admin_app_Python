@@ -11,6 +11,9 @@ import repositories.booking_repository as booking_repository
 member1 = Member("White", "Goodman", "01/01/1975", "Mr", "he/him", "Loves milk")
 member_repository.save(member1)
 
+member2 = Member("Jones", "Me'Shell", "20/02/1979", "Mr", "he/him")
+member_repository.save(member2)
+
 fit_class1 = Fit_class("Dodgeball", "Sport", "Patches", "03/12/2021", "12:00", "Gym hall")
 fit_class_repository.save(fit_class1)
 
