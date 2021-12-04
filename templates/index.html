@@ -8,7 +8,11 @@
     <ul>
         {% for fit_class in fit_classes %}
             <li>
-                <a href="/classes/{{ fit_class.id }}">{{ fit_class.name }}</a>
+                <a href="/classes/{{ fit_class.id }}">{{ fit_class.name }}</a> 
+                <p>{{ fit_class.date }}</p>
+                <p>{{ fit_class.time }}</p>
+                <p>{{ fit_class.location }}</p>
+                <p>{{ fit_class.instructor }}</p>
             </li>    
         {% endfor %}
     </ul>

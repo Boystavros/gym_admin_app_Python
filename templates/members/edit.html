@@ -2,7 +2,9 @@
 
 {% block content %}
     
-<form action="/update/{{ member.id }}" method="post">
+<h1>Edit details for {{ member.first_name }} {{ member.last_name }}</h1>
+
+<form action="/members/update/{{ member.id }}" method="post">
     <label for="first_name">First name:</label>
     <input type="text" name="first_name" id="first_name" value="{{ member.first_name }}">
 

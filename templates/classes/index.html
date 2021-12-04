@@ -36,7 +36,6 @@
         <input type="text" name="location" id="location">
 
         <button type="submit">Add class</button>
-       
     </form>
     
 
@@ -45,6 +44,8 @@
     {% for fit_class in fit_classes %}
         <li>
             <a href="/classes/{{ fit_class.id }}">{{ fit_class.name }}</a>
+            <p>{{ fit_class.date }}</p>
+            <p>{{ fit_class.time }}</p>
         </li>    
     {% endfor %}
     </ul>
