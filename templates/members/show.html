@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Member details</h1>
+
+    <p>Title: {{ member.title }}</p>
+    <p>Pronouns: {{ member.pronouns }}</p>
+    <p>{{ member.last_name }}, {{ member.first_name }}</p>
+    <p>Date of birth: {{ member.dob }}</p>
+    <p>Notes: {{ member.notes }}</p>
+
+    <button><a href="/members/update/{{ member.id }}"></a>Update details</button>
+    <button><a href="/bookings/edit_member_bookings/{{ member.id }}"></a>Edit bookings</button>
+    
+
+{% endblock content %}

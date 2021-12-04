@@ -20,5 +20,18 @@ def select_all():
         members.append(member)
     return members
 
+def select(id):
+    member = None
+    sql = "SELECT * FROM members WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        member = Member(result['first_name'], result['last_name'], result['dob'], result['title'], result['pronouns'], result['notes'], result['id'])
+    return member
+
+
+
+
 
 

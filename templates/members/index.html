@@ -8,7 +8,7 @@
     <h2>Members:</h2>
     <ul>
         {% for member in members %}
-            <li>{{ member.last_name }}, {{ member.first_name }}</li>
+            <li><a href="/members/show/{{ member.id }}">{{ member.last_name }}, {{ member.first_name }}</a></li>
         {% endfor %}
     </ul>
 {% endblock content %}

@@ -13,3 +13,11 @@ def members():
 @members_blueprint.route("/members/add_member")
 def add_member():
     return render_template("/members/add_member.html")
+
+@members_blueprint.route("/members/show/<id>")
+def select(id):
+    member = member_repository.select(id)
+    return render_template("/members/show.html", member=member)
+
+@members_blueprint.route("/members/update/<id>")
+# start here
