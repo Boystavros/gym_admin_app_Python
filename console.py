@@ -14,5 +14,5 @@ member_repository.save(member1)
 fit_class1 = Fit_class("Dodgeball", "Sport", "Patches", "03/12/2021", "12:00", "Gym hall")
 fit_class_repository.save(fit_class1)
 
-booking1 = Booking(member1, fit_class1, "19:05_03/12/2021")
+booking1 = Booking(member1, fit_class1, "19:05_03/12/2021", "Peter")
 booking_repository.save(booking1)
