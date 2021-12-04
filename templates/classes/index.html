@@ -4,9 +4,44 @@
     
     <h1>Classes</h1>
 
-   <a href="/fit_classes/add_fit_class"><button class="add_new_fit_class">Add new class</button></a>
+    <h2>Add new class</h2>
+   
+    <form action="/classes/add" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
 
-   <ul>
+        <label for="category">Category:</label>
+        <select name="category" id="category">
+            <option value="sports">Sports</option>
+            <option value="wellness">Wellness</option>
+            <option value="cardio">Cardio</option>
+            <option value="resistance">Resistance</option>
+            <option value="dance">Dance</option>
+        </select>
+
+        <label for="instructor">Instructor:</label>
+        <select name="instructor" id="instructor">
+            <option value="patches">Patches O'Hoolihan</option>
+            <option value="cotton">Cotton McKnight</option>
+            <option value="pepper">Pepper Brooks</option>
+        </select>
+
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date">
+
+        <label for="time">Time:</label>
+        <input type="time" name="time" id="time">
+
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location">
+
+        <button type="submit">Add class</button>
+       
+    </form>
+    
+
+    <h2>Upcoming classes: </h2>
+    <ul>
     {% for fit_class in fit_classes %}
         <li>
             <a href="/classes/{{ fit_class.id }}">{{ fit_class.name }}</a>
