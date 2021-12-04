@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>WorldoGym Admin App</title>
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>WorldoGym</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/members">Members</a>
+                </li>
+                <li>
+                    <a href="/fit_classes">Classes</a>
+                </li>
+                <li>
+                    <a href="/bookings">Bookings</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        {% block content %}
+            
+        {% endblock content %}
+
+    </main>
+</body>
+
+</html>

@@ -24,8 +24,8 @@ CREATE TABLE fit_classes(
 
 CREATE TABLE bookings(
     id SERIAL PRIMARY KEY,
-    member_id INT REFERENCES members(id),
-    fit_class_id INT REFERENCES fit_classes(id),
+    member_id INT REFERENCES members(id) ON DELETE CASCADE,
+    fit_class_id INT REFERENCES fit_classes(id) ON DELETE CASCADE,
     timestamp VARCHAR(255),
     staff_member VARCHAR(255)
 );
