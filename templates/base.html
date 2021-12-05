@@ -1,36 +1,39 @@
 <html>
-<head>
-    <title>WorldoGym Admin App</title>
-    <link rel="stylesheet" href="/static/css/reset.css">
-    <link rel="stylesheet" href="/static/css/styles.css">
-</head>
-<body>
-    <header>
-        <h1>WorldoGym</h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/members">Members</a>
-                </li>
-                <li>
-                    <a href="/fit_classes">Classes</a>
-                </li>
-                <li>
-                    <a href="/bookings">Bookings</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <hr>
-    <main>
+    <head>
+        <title>WorldoGym Admin App</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/reset.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/styles.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <img id="logo" src="/static/images/logo.png" alt="WorldoGym Logo">
+            <h1> WorldoGym</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/members">Members</a>
+                    </li>
+                    <li>
+                        <a href="/fit_classes">Classes</a>
+                    </li>
+                    <li>
+                        <a href="/bookings">Bookings</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
         {% block content %}
             
         {% endblock content %}
 
-    </main>
-</body>
+        </main>
+    </body>
 
 </html>

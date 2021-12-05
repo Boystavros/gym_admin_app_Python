@@ -76,4 +76,4 @@ booking_repository.save(booking4)
 
 #TEST booking by... functions
 # print(booking_repository.bookings_by_member(member1)[0].__dict__)
-print(booking_repository.bookings_by_class(fit_class3))
+# print(booking_repository.bookings_by_class(fit_class3))
