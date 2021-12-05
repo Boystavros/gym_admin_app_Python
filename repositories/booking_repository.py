@@ -23,7 +23,7 @@ def select_all():
     for row in results:
         member = member_repository.select(row['member_id'])
         fit_class = fit_class_repository.select(row['fit_class_id'])
-        booking = Booking(member, fit_class, row['timestamp'], row['staff_member'], row['id'])
+        booking = Booking(member, fit_class, row['staff_member'], row['timestamp'], row['id'])
         bookings.append(booking)
     return bookings
 
@@ -42,10 +42,10 @@ def select(id):
 
 #UPDATE
 def update(booking):
-    sql = "UPDATE bookings SET (member_id, fit_class_id, timestamp, staff_member) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [booking.member.id, booking.fit_class.id, booking.timestamp, booking.staff_member, booking.id]
+    sql = "UPDATE bookings SET (member_id, fit_class_id, staff_member, timestamp) = (%s, %s, %s, %s) WHERE id = %s RETURNING *"
+    values = [booking.member.id, booking.fit_class.id, booking.staff_member, booking.timestamp, booking.id]
     run_sql(sql, values)
-
+    
 #DELETE
 def delete_all():
     sql = "DELETE  FROM bookings"

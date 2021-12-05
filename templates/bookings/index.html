@@ -4,7 +4,56 @@
     
     <h1>Bookings</h1>
 
-    <button id="create_booking"><a href="/bookings/new_booking">Create booking</a></button>
+    <h2>Create booking:</h2>
 
-    <button id="search bookings"><a href="/bookings/show_bookings">Search bookings</a></button>
+    <form action="/bookings/create" method="post">
+        <label for="member">Select member:</label>
+        <select name="member_id" id="member" >
+            {% for member in members %}
+                <option value="{{ member.id }}">{{ member.first_name }} {{ member.last_name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="fit_class">Select class:</label>
+        <select name="fit_class_id" id="fit_class">
+            {% for fit_class in fit_classes %}
+                <option value="{{ fit_class.id }}">{{ fit_class.name }}  {{ fit_class.time }} {{ fit_class.date }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="staff_member">Staff member name:</label>
+        <input type="text" name="staff_member" id="staff_member">
+
+        <button type="submit">Create booking</button>
+    </form>
+
+    <!-- <button id="search bookings"><a href="/bookings/show_bookings">Search bookings</a></button> -->
+    <h2>Bookings:</h2>
+    <ul aria-label="booking column headings">
+        <li>Class name</li>
+        <li>Member</li>
+        <li>Class date</li>
+        <li>Class time</li>
+        <li>Instructor</li>
+        <li>Created by</li>
+        <li>Timestamp</li>
+    </ul>
+    <hr> <!-- probs remove and style with css -->
+    <ul>
+    {% for booking in bookings %}
+        <li>
+            <p>{{ booking.fit_class.name }}</p>
+            <p>{{ booking.member.first_name }} {{ booking.member.last_name }}</p>
+            <p>{{ booking.fit_class.date }}</p>
+            <p>{{ booking.fit_class.time }}</p>
+            <p>{{ booking.fit_class.instructor }}</p>
+            <p>{{ booking.staff_member }}</p>
+            <p>{{ booking.timestamp }}</p>
+            <a href="/bookings/{{ booking.id }}/edit"><button>Edit details</button></a>
+            <a href="/bookings/{{ booking.id }}/delete"><button>Delete ❌ </button></a>
+
+        </li>
+        <hr> <!-- probs remove and style with css -->
+    {% endfor %}
+    </ul>
 {% endblock content %}

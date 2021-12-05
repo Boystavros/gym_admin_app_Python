@@ -48,5 +48,5 @@ def update(id):
     location = request.form['location']
     fit_class = Fit_class(name, category, instructor, date, time, location, id)
     fit_class_repository.update(fit_class)
-    return redirect(f"/classes/{id}")
+    return redirect("/fit_classes")
 
