@@ -1,5 +1,9 @@
 from db.run_sql import run_sql
 from models.member import Member
+from models.fit_class import Fit_class
+from models.booking import Booking
+import repositories.fit_class_repository as fit_class_repository
+import repositories.booking_repository as booking_repository
 
 #CREATE
 def save(member):
@@ -49,5 +53,5 @@ def delete_all():
     run_sql(sql)
 
 
-
+        
 

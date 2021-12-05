@@ -37,7 +37,7 @@ def select(id):
     if result is not None:
         member = member_repository.select(result['member_id'])
         fit_class = fit_class_repository.select(result['fit_class_id'])
-        booking = Booking(member, fit_class, result['timestamp'], result['staff_member'], result['id'])
+        booking = Booking(member, fit_class, result['staff_member'], result['timestamp'], result['id'])
     return booking
 
 #UPDATE
@@ -56,4 +56,15 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
+#BOOKINGS BY MEMBER OR CLASS
+def bookings_by_member(member):
+    bookings = []
+    
+    sql = "SELECT * FROM bookings WHERE member_id = %s"
+    values = [member.id]
+    results = run_sql(sql, values)
 
+    for row in results:
+        booking = select(row['id'])
+        bookings.append(booking)
+    return bookings

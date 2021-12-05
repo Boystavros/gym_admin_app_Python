@@ -14,12 +14,19 @@
     <a href="/classes/{{ fit_class.id }}/edit"><button>Edit details</button></a>
     <a href="/classes/{{ fit_class.id }}/delete"><button>Delete ❌ </button></a>
 
-    <form action="/classes/add_member" method="post">
+    <form action="/bookings/create" method="post">
+        <input type="hidden" name="fit_class_id" value="{{ fit_class.id }}">
+        
         <label for="member">Book members onto class:</label>
-        <select name="member" id="member">
-            <option value="member1">member1</option>
-            <option value="member2">Member2</option>
+        <select name="member_id" id="member">
+            {% for member in members %}
+                <option value="{{ member.id }}">{{ member.first_name }} {{ member.last_name }}</option>
+            {% endfor %}
         </select>
+
+        <label for="staff_member">Staff member:</label>
+        <input type="text" name="staff_member" id="staff_member">
+
         <button type="submit">Book member on class</button>
     </form>
 

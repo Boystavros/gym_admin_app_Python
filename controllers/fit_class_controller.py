@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from flask.helpers import url_for
+from controllers.member_controller import members
 from models.fit_class import Fit_class
 import repositories.fit_class_repository as fit_class_repository
+import repositories.member_repository as member_repository
 
 fit_classes_blueprint = Blueprint("fit_classes", __name__)
 
@@ -25,8 +27,9 @@ def add_class():
 
 @fit_classes_blueprint.route("/classes/<id>")
 def show(id):
+    members = member_repository.select_all()
     fit_class = fit_class_repository.select(id)
-    return render_template("classes/show.html", fit_class=fit_class)
+    return render_template("classes/show.html", fit_class=fit_class, members=members)
 
 @fit_classes_blueprint.route("/classes/<id>/delete")
 def delete(id):
@@ -49,4 +52,5 @@ def update(id):
     fit_class = Fit_class(name, category, instructor, date, time, location, id)
     fit_class_repository.update(fit_class)
     return redirect("/fit_classes")
+
 
