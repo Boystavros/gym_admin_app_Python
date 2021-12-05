@@ -48,7 +48,7 @@ booking_repository.save(booking2)
 booking3 = Booking(member3, fit_class3, "Dwight")
 booking_repository.save(booking3)
 
-booking4 = Booking(member4, fit_class4, "Patches")
+booking4 = Booking(member4, fit_class3, "Patches")
 booking_repository.save(booking4)
 
 
@@ -75,4 +75,5 @@ booking_repository.save(booking4)
 # print(type(ct))
 
 #TEST booking by... functions
-print(booking_repository.bookings_by_member(member1)[0].__dict__)
+# print(booking_repository.bookings_by_member(member1)[0].__dict__)
+print(booking_repository.bookings_by_class(fit_class3))

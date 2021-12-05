@@ -68,3 +68,15 @@ def bookings_by_member(member):
         booking = select(row['id'])
         bookings.append(booking)
     return bookings
+
+def bookings_by_class(fit_class):
+    bookings = []
+    
+    sql = "SELECT * FROM bookings WHERE fit_class_id = %s"
+    values = [fit_class.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        booking = select(row['id'])
+        bookings.append(booking)
+    return bookings

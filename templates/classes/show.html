@@ -14,7 +14,7 @@
     <a href="/classes/{{ fit_class.id }}/edit"><button>Edit details</button></a>
     <a href="/classes/{{ fit_class.id }}/delete"><button>Delete ❌ </button></a>
 
-    <form action="/bookings/create" method="post">
+    <form action="/bookings/class/{{ fit_class.id }}/create" method="post">
         <input type="hidden" name="fit_class_id" value="{{ fit_class.id }}">
         
         <label for="member">Book members onto class:</label>
@@ -29,5 +29,15 @@
 
         <button type="submit">Book member on class</button>
     </form>
+
+    <h2>Members booked onto this class:</h2>
+    <ul>
+        {% for booking in bookings %}
+            <li>
+                <a href="/members/{{ booking.member.id }}">{{ booking.member.first_name }} {{ booking.member.last_name }}</a>
+                <a href="/bookings/class{{ fit_class.id }}/{{ booking.id }}/delete"><button>Remove ❌ </button></a>                
+            </li>
+        {% endfor %}
+    </ul>
 
 {% endblock content %}

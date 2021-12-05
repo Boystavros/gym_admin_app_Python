@@ -12,7 +12,20 @@
     <p>Notes: {{ member.notes }}</p>
 
     <a href="/members/{{ member.id }}/edit"><button>Edit details</button></a>
-    <a href="/members/{{ member.id }}/bookings"><button>Member bookings</button></a>
     <a href="/members/{{ member.id }}/delete"><button> Delete ❌ </button></a>
 
+    <h2>Member's bookings:</h2>
+
+    <ul>
+    {% for booking in bookings %}
+        <li>
+            <p>{{ booking.fit_class.name }}</p>
+            <p>{{ booking.fit_class.date }}</p>
+            <p>{{ booking.fit_class.time }}</p>
+            <a href="/bookings/{{ booking.id }}/edit"><button>Edit booking</button></a>
+            <a href="/bookings/{{ booking.id }}/delete"><button>Delete ❌ </button></a>           
+        </li>
+        <hr>
+    {% endfor %}
+    </ul>
 {% endblock content %}

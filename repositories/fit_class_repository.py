@@ -57,5 +57,3 @@ def delete(id):
 def delete_all():
     sql = "DELETE  FROM fit_classes"
     run_sql(sql)
-
-

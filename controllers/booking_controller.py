@@ -46,3 +46,17 @@ def update(id):
     booking_repository.update(booking)
     return redirect("/bookings")
 
+
+@bookings_blueprint.route("/bookings/class/<id>/create", methods=['POST'])
+def class_create(id):
+    member = member_repository.select(request.form['member_id'])
+    fit_class = fit_class_repository.select(request.form['fit_class_id'])
+    staff_member = request.form['staff_member']
+    booking = Booking(member, fit_class, staff_member)
+    booking_repository.save(booking)
+    return redirect(f"/classes/{id}")
+
+@bookings_blueprint.route("/bookings/class<class_id>/<booking_id>/delete")
+def class_delete(class_id, booking_id):
+    booking_repository.delete(booking_id)
+    return redirect(f"/classes/{class_id}")

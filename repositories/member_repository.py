@@ -4,6 +4,7 @@ from models.fit_class import Fit_class
 from models.booking import Booking
 import repositories.fit_class_repository as fit_class_repository
 import repositories.booking_repository as booking_repository
+import repositories.member_repository as member_repository
 
 #CREATE
 def save(member):
@@ -53,5 +54,16 @@ def delete_all():
     run_sql(sql)
 
 
-        
+# #MEMBERS BOOKED ON CLASS
+# def attendees(fit_class):
+#     attendees = []
+    
+#     sql = "SELECT * FROM bookings WHERE fit_class_id = %s"
+#     values = [fit_class.id]
+#     results = run_sql(sql, values)
+
+#     for row in results:
+#         member = member_repository.select(row['member_id'])
+#         attendees.append(member)
+#     return attendees
 
