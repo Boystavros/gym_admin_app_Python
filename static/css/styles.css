@@ -1,5 +1,5 @@
 /* use these initial values
-a color =  
+a color = #551A8B
 }
 */
 
@@ -46,7 +46,7 @@ header a {
     font-size: 1.5rem;
     flex-grow: 2;
     padding-top: 36px;
-    color: #1d1c1c;
+    color: #551A8B;
 }
 
 #site-logo {
@@ -72,10 +72,17 @@ li {
 
 nav li a {
     font-size: 1.5rem;
+    /* color: rgb(31, 30, 30); */
+    color: rgb(94, 92, 92);
 }
 
+
 a:hover {
-    color: blue;
+    color: rgb(94, 92, 92);
+}
+
+header a:hover {
+    color: #551A8B;
 }
 
 #site-name:hover {
@@ -96,6 +103,7 @@ main {
     font-size: 2rem;
     text-align: left;
     font-weight: 400;
+    margin: 1rem 0 2rem;
 }
 
 .container-title {
@@ -106,3 +114,18 @@ main {
     margin: 1rem 0;
     border: 2px solid #111111;
 }
+
+.container-content {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.container li {
+    text-align: left;
+    line-height: 1.5;
+    width: auto;
+    border:1px solid black;
+}
+
