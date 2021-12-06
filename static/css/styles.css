@@ -1,65 +1,36 @@
-html {
-    background-image: url(/static/images/globogym_scene.jpeg);
-    background-size: cover;
-    margin: 0%;
-    padding: 0%;
-}
 
-body {
-    font-family: 'Abril Fatface', cursive;
-    margin: 0%;
-    padding: 0%;
-}
 
 header {
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    height: 10%;
-    background-color: rgba(120, 128, 128, 0.687);
-    display: inline-flex;
+    width: 80%;
+    margin: 0 auto;
+    height: 6rem;
+    display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 2px black solid;
 }
 
 h1 {
-    text-align: center;
-    color: rgb(100, 25, 100);
-    font-size: 4rem;
-    padding-top: 1%;
+    order: 0;
 }
 
-header > nav {
-    display: block;
-    width: 100px;
+#site-logo {
+    order: -1;
+    height: inherit;
 }
 
-header > nav > ul {
-    /* background-color: rgb(100, 25, 100);
-    height: 100%;
-    inline-;
-    display: inline-flex; */
+ul {
+    order: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    text- 
 }
 
-header > nav > ul > li {
-    height: 25%;
-    background-color: rgb(120, 128, 128);
-    text-align: end;
+li {
+
 }
 
-header > nav > ul > li > a {
-    /* background-color: rgb(100, 25, 100);
-    color:rgb(218, 212, 212);
-    text-decoration: none; */
-    
-}
 
-main {
-    display: block;
-    width: 90%;
-    height: 90%;
-    background-color: white;
-    margin: auto;
-    border-left: 2px solid #999;
-    border-right: 2px solid #999;
-}
