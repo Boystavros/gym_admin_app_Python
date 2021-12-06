@@ -30,12 +30,12 @@ header a {
     color: black;
 }
 
-h1 {
+#site-name {
     font-size: 4rem;
     font-weight: 600;
 }
 
-h2 {
+#slogan {
     font-size: 1.5rem;
     flex-grow: 2;
     padding-top: 36px;
@@ -74,3 +74,14 @@ a:hover {
 #site-name:hover {
     color: initial;
 }
+
+main {
+    margin-top: 1rem;
+}
+
+/* Content */
+
+.page-title {
+    font-size: 2rem;
+    text-align: center;
+} 
