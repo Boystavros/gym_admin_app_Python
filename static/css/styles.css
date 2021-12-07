@@ -109,6 +109,18 @@ main {
     padding-bottom: 2rem;
 }
 
+input {
+    text-align: right;
+}
+
+button {
+    background-color: #353434;
+    color: white;
+    font-weight: bolder;
+    width: fit-content;
+    justify-self: end;
+}
+
 /* Content */
 
 .page-title {
@@ -164,13 +176,14 @@ main {
 #add-member {
     grid-template-columns: 1fr 2fr 1fr 2fr;
     column-gap: 5px;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     text-align: end;
     font-size: 1.5rem;
 }
 
 #add-member button {
-    grid: 
+    grid-row: 4;
+    grid-column: 4; 
 }
 
 /* footer */
