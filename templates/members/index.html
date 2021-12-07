@@ -1,37 +1,40 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Members</h1>
+    <h2 class="page-title">Members<span class="purple-accent">&#46;</span></h2>
+    
+    <fieldset class="container">
+    <legend class="container-title">Add new member</legend>
 
-    <!-- <button class="add_member_button"><a href="/members/add_member">Add new member</a></button> -->
-    <h2>Add new member</h2>
+        <form class="container-content" action="/members/add_member" method="post">
+            <label for="first_name">First name:</label>
+            <input type="text" name="first_name" id="first_name">
 
-    <form action="/members/add_member" method="post">
-        <label for="first_name">First name:</label>
-        <input type="text" name="first_name" id="first_name">
+            <label for="last_name">Last name:</label>
+            <input type="text" name="last_name" id="last_name">
 
-        <label for="last_name">Last name:</label>
-        <input type="text" name="last_name" id="last_name">
+            <label for="dob">Date of birth:</label>
+            <input type="date" name="dob" id="dob">
 
-        <label for="dob">Date of birth:</label>
-        <input type="date" name="dob" id="dob">
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title">
 
-        <label for="title">Title:</label>
-        <input type="text" name="title" id="title">
+            <label for="pronouns">Pronouns:</label>
+            <input type="text" name="pronouns" id="pronouns">
 
-        <label for="pronouns">Pronouns:</label>
-        <input type="text" name="pronouns" id="pronouns">
+            <label for="notes">Notes:</label>
+            <textarea name="notes" id="notes" cols="30" rows="2"></textarea>
 
-        <label for="notes">Notes:</label>
-        <textarea name="notes" id="notes" cols="30" rows="2"></textarea>
+            <button type="submit">Add member</button>
+        </form>
+    </fieldset>
 
-        <button type="submit">Add member</button>
-    </form>
-
-    <h2>Members:</h2>
-    <ul>
-        {% for member in members %}
-            <li><a href="/members/{{ member.id }}">{{ member.last_name }}, {{ member.first_name }}</a></li>
-        {% endfor %}
-    </ul>
+    <fieldset class="container">
+        <legend class="container-title">Current Members</legend>
+        <ul class="container-content">
+            {% for member in members %}
+                <li><a href="/members/{{ member.id }}">{{ member.last_name }}, {{ member.first_name }}</a></li>
+            {% endfor %}
+        </ul>
+    </fieldset>
 {% endblock content %}
