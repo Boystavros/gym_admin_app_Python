@@ -19,7 +19,7 @@
         </div>
     </fieldset>
     <fieldset class="container">
-        <legend class="container-title">Book members onto class:</legend>
+        <legend class="container-title">Book members onto class</legend>
         <form class="container-content-form" id="book-class" action="/bookings/class/{{ fit_class.id }}/create" method="post">
             <input type="hidden" name="fit_class_id" value="{{ fit_class.id }}">
             
@@ -36,14 +36,15 @@
             <button type="submit">Book member on class</button>
         </form>
     </fieldset>
-    <h2>Members booked onto this class:</h2>
-    <ul>
-        {% for booking in bookings %}
-            <li>
-                <a href="/members/{{ booking.member.id }}">{{ booking.member.first_name }} {{ booking.member.last_name }}</a>
-                <a href="/bookings/class{{ fit_class.id }}/{{ booking.id }}/delete"><button>Remove ❌ </button></a>                
-            </li>
-        {% endfor %}
-    </ul>
-
+    <fieldset class="container">
+        <legend class="container-title">Attendees</legend>
+            <ul class="container-content-tiles">
+                {% for booking in bookings %}
+                    <li>
+                        <a href="/members/{{ booking.member.id }}">{{ booking.member.first_name }} {{ booking.member.last_name }}</a>
+                        <a href="/bookings/class{{ fit_class.id }}/{{ booking.id }}/delete"><button class="delete-button">Remove</button></a>                
+                    </li>
+                {% endfor %}
+            </ul>
+        </fieldset> 
 {% endblock content %}
