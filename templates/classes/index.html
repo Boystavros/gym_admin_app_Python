@@ -39,16 +39,16 @@
             <button type="submit">Add class</button>
         </form>
     </fieldset>
-
-    <h2>Classes: </h2>
-    <ul>
-    {% for fit_class in fit_classes %}
-        <li>
-            <a href="/classes/{{ fit_class.id }}">{{ fit_class.name }}</a>
-            <p>{{ fit_class.date }}</p>
-            <p>{{ fit_class.time }}</p>
-        </li>    
-    {% endfor %}
-    </ul>
-
+    <fieldset class="container">
+    <legend class="container-title">Current classes</legend>
+        <ul class="container-content-tiles">
+        {% for fit_class in fit_classes %}
+            <li>
+                <a href="/classes/{{ fit_class.id }}">{{ fit_class.name }}</a>
+                <p>{{ fit_class.date }}</p>
+                <p>{{ fit_class.time }}</p>
+            </li>    
+        {% endfor %}
+        </ul>
+    </fieldset>
 {% endblock content %}
