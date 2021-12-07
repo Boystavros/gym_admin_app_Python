@@ -159,9 +159,19 @@ main {
     font-weight: bolder;
 }
 
-/* .container label {
-    text-align: right;
-} */
+/* container forms */
+
+#add-member {
+    grid-template-columns: 1fr 2fr 1fr 2fr;
+    column-gap: 5px;
+    grid-template-rows: 1fr 1fr 1fr;
+    text-align: end;
+    font-size: 1.5rem;
+}
+
+#add-member button {
+    grid: 
+}
 
 /* footer */
 
