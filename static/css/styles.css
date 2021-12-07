@@ -200,6 +200,10 @@ button.delete-button {
     font-size: 1.5rem;
 }
 
+/* #book-class {
+    grid-template-rows: 1fr 1fr;
+} */
+
 .container-content-form input textarea {
     width: fit-content;
     width: 50ch;
@@ -218,12 +222,12 @@ input#dob, select, input#date, input#time {
 
 .container-content-details {
     max-width: 100%;
-    margin: 1.5rem;
+    margin: 1.5em;
     display: grid;
     row-gap: 1.5rem;
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 0.2em 0.8em;
 }
-
 
 /* footer */
 
