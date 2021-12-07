@@ -186,7 +186,7 @@ button.delete-button {
     font-weight: bolder;
 }
 
-table {
+.container-content-table {
     margin: 1.5rem;
 }
 
@@ -196,16 +196,26 @@ th, td {
     align-content: center;
 }
 
-th {
-    font-size: 1.3rem;
-    width: fit-content;
-    border-bottom: 2px solid #762fb9;
-}
-
 td {
     border-bottom: 1px dashed #762fb9;
 }
 
+tr:hover {
+    background-color: #762fb9;
+    color: white;
+}
+
+tr th:hover {
+    background-color: white;
+    color: black;
+}
+
+th {
+    font-size: 1.3rem;
+    width: fit-content;
+    border-bottom: 2px solid #762fb9;
+    pointer-events: none;
+}
 
 
 /* container forms */
