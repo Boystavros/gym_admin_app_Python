@@ -133,6 +133,7 @@ button {
 button:hover {
     background-color: white;
     color: #f67a06;
+    border-color: #f67a06;
 }
 
 button.delete-button {
