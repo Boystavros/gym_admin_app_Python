@@ -2,55 +2,59 @@
 
 {% block content %}
     
-    <h1>Edit details for {{ fit_class.name }}</h1>
+    <h2 class="page-title">Edit class details<span class="purple-accent">&#46;</span></h2> 
+        
+    <fieldset class="container">    
+    
+        <legend class="container-title">Edit details for {{ fit_class.name }}</legend>
+        <form class="container-content-form" action="/classes/update/{{ fit_class.id }}" method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="{{ fit_class.name }}">
 
-    <form action="/classes/update/{{ fit_class.id }}" method="post">
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" value="{{ fit_class.name }}">
+            <label for="location">Location:</label>
+            <input type="text" name="location" id="location" value="{{ fit_class.location }}">
 
-        <label for="category">Category:</label>
-        <select name="category" id="category">
-                <option value="sports" {% if fit_class.category == "sports" %}
+            <label for="instructor">Instructor:</label>
+            <select name="instructor" id="instructor">
+                <option value="patches" {% if fit_class.instructor == "Patches O'Hoolihan" %}
+                selected="selected"
+            {% endif %}>Patches O'Hoolihan</option>
+                <option value="cotton" {% if fit_class.instructor == "Cotton McKnight" %}
+                selected="selected"
+            {% endif %}>Cotton McKnight</option>
+                <option value="pepper" {% if fit_class.instructor == "Pepper Brooks" %}
+                selected="selected"
+            {% endif %}>Pepper Brooks</option>
+            </select>
+
+            <label for="date">Date:</label>
+            <input type="date" name="date" id="date" value="{{ fit_class.date }}">
+
+            <label for="category">Category:</label>
+            <select name="category" id="category">
+                    <option value="sports" {% if fit_class.category == "sports" %}
+                        selected="selected"
+                    {% endif %}>Sports</option>
+                    <option value="wellness" {% if fit_class.category == "wellness" %}
                     selected="selected"
-                {% endif %}>Sports</option>
-                <option value="wellness" {% if fit_class.category == "wellness" %}
-                selected="selected"
-            {% endif %}>Wellness</option>
-                <option value="cardio" {% if fit_class.category == "cardio" %}
-                selected="selected"
-            {% endif %}>Cardio</option>
-                <option value="resistance" {% if fit_class.category == "resistance" %}
-                selected="selected"
-            {% endif %}>Resistance</option>
-                <option value="dance" {% if fit_class.category == "dance" %}
-                selected="selected"
-            {% endif %}>Dance</option>
-        </select>
+                {% endif %}>Wellness</option>
+                    <option value="cardio" {% if fit_class.category == "cardio" %}
+                    selected="selected"
+                {% endif %}>Cardio</option>
+                    <option value="resistance" {% if fit_class.category == "resistance" %}
+                    selected="selected"
+                {% endif %}>Resistance</option>
+                    <option value="dance" {% if fit_class.category == "dance" %}
+                    selected="selected"
+                {% endif %}>Dance</option>
+            </select>
 
-        <label for="instructor">Instructor:</label>
-        <select name="instructor" id="instructor">
-            <option value="patches" {% if fit_class.instructor == "Patches O'Hoolihan" %}
-            selected="selected"
-        {% endif %}>Patches O'Hoolihan</option>
-            <option value="cotton" {% if fit_class.instructor == "Cotton McKnight" %}
-            selected="selected"
-        {% endif %}>Cotton McKnight</option>
-            <option value="pepper" {% if fit_class.instructor == "Pepper Brooks" %}
-            selected="selected"
-        {% endif %}>Pepper Brooks</option>
-        </select>
+            <label for="time">Time:</label>
+            <input type="time" name="time" id="time" value="{{ fit_class.time }}">
 
-        <label for="date">Date:</label>
-        <input type="date" name="date" id="date" value="{{ fit_class.date }}">
-
-        <label for="time">Time:</label>
-        <input type="time" name="time" id="time" value="{{ fit_class.time }}">
-
-        <label for="location">Location:</label>
-        <input type="text" name="location" id="location" value="{{ fit_class.location }}">
-
-        <button type="submit">Update details</button>
-       
-    </form>
+            <button type="submit">Update details</button>
+        
+        </form>
+    </fieldset>
 
 {% endblock content %}

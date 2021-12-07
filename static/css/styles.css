@@ -200,9 +200,6 @@ button.delete-button {
     font-size: 1.5rem;
 }
 
-
-
-
 .container-content-form input textarea {
     width: fit-content;
     width: 50ch;
@@ -222,7 +219,7 @@ form#book-class.container-content-form button {
     grid-column: -1/-1;
 }
 
-input#dob, select, input#date, input#time {
+input#dob, select, input#date, input#time, input#name, input#location{
     width: fit-content;
 }
 
