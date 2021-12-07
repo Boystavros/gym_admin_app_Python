@@ -130,12 +130,19 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: white;
+    color: #f67a06;
+}
+
 button.delete-button {
     background-color: #ca2305;
     border-color: #ca2305;
 }
 
-
+button.delete-button:hover {
+    color: black;
+}
 
 /* Content */
 
