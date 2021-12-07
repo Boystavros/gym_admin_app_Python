@@ -250,7 +250,7 @@ th {
     grid-column: 4; 
 }
 
-form#book-class.container-content-form, form#create-booking.container-content-form {
+form#book-class.container-content-form, form#create-booking.container-content-form, form#edit-booking.container-content-form {
     grid-template-rows: unset;
 }
 
@@ -259,7 +259,7 @@ form#book-class.container-content-form button {
     grid-column: -1/-1;
 }
 
-form#create-booking.container-content-form button {
+form#create-booking.container-content-form button, form#edit-booking.container-content-form button {
     grid-row: 2;
     grid-column: 4;
 }
