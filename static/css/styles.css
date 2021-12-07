@@ -186,6 +186,28 @@ button.delete-button {
     font-weight: bolder;
 }
 
+table {
+    margin: 1.5rem;
+}
+
+th, td {
+    padding: 1.5em;
+    text-align: center;
+    align-content: center;
+}
+
+th {
+    font-size: 1.3rem;
+    width: fit-content;
+    border-bottom: 2px solid #762fb9;
+}
+
+td {
+    border-bottom: 1px dashed #762fb9;
+}
+
+
+
 /* container forms */
 
 .container-content-form {
@@ -210,13 +232,18 @@ button.delete-button {
     grid-column: 4; 
 }
 
-form#book-class.container-content-form {
+form#book-class.container-content-form, form#create-booking.container-content-form {
     grid-template-rows: unset;
 }
 
 form#book-class.container-content-form button {
     grid-row: -1/-1;
     grid-column: -1/-1;
+}
+
+form#create-booking.container-content-form button {
+    grid-row: 2;
+    grid-column: 4;
 }
 
 input#dob, select, input#date, input#time, input#name, input#location{

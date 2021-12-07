@@ -2,34 +2,69 @@
 
 {% block content %}
     
-    <h1>Bookings</h1>
+    <h2 class="page-title">Bookings<span class="purple-accent">&#46;</span></h2>
 
-    <h2>Create booking:</h2>
-
-    <form action="/bookings/create" method="post">
-        <label for="member">Select member:</label>
-        <select name="member_id" id="member" >
-            {% for member in members %}
-                <option value="{{ member.id }}">{{ member.first_name }} {{ member.last_name }}</option>
-            {% endfor %}
-        </select>
-
-        <label for="fit_class">Select class:</label>
-        <select name="fit_class_id" id="fit_class">
-            {% for fit_class in fit_classes %}
+    <fieldset class="container">
+        <legend class="container-title">Create booking</legend>
+        
+        <form class="container-content-form" id="create-booking" action="/bookings/create" method="post">
+            
+            <label for="fit_class">Select class:</label>
+            <select name="fit_class_id" id="fit_class">
+                {% for fit_class in fit_classes %}
                 <option value="{{ fit_class.id }}">{{ fit_class.name }}  {{ fit_class.time }} {{ fit_class.date }}</option>
-            {% endfor %}
-        </select>
+                {% endfor %}
+            </select>
 
-        <label for="staff_member">Staff member name:</label>
-        <input type="text" name="staff_member" id="staff_member">
+            <label for="staff_member">Staff member name:</label>
+            <input type="text" name="staff_member" id="staff_member">
 
-        <button type="submit">Create booking</button>
-    </form>
+            <label for="member">Select member:</label>
+            <select name="member_id" id="member" >
+                {% for member in members %}
+                    <option value="{{ member.id }}">{{ member.first_name }} {{ member.last_name }}</option>
+                {% endfor %}
+            </select>
+
+
+            <button type="submit">Create booking</button>
+        </form>
+    </fieldset>
 
     <!-- <button id="search bookings"><a href="/bookings/show_bookings">Search bookings</a></button> -->
-    <h2>Bookings:</h2>
-    <ul aria-label="booking column headings">
+    <fieldset class="container">    
+        <legend class="container-title">Bookings</legend>
+            <table class="container-content-table">
+                <tr>
+                    <th>Class name</th>
+                    <th>Member</th>
+                    <th>Class date</th>
+                    <th>Class time</th>
+                    <th>Instructor</th>
+                    <th>Created by</th>
+                    <th>Timestamp</th>
+                    <th></th>
+                </tr>
+            {% for booking in bookings %}
+                <tr>
+                    <td>{{ booking.fit_class.name }}</td>
+                    <td>{{ booking.member.first_name }} {{ booking.member.last_name }}</td>
+                    <td>{{ booking.fit_class.date }}</td>
+                    <td>{{ booking.fit_class.time }}</td>
+                    <td>{{ booking.fit_class.instructor }}</td>
+                    <td>{{ booking.staff_member }}</td>
+                    <td>{{ booking.timestamp }}</td>
+                    <td><a href="/bookings/{{ booking.id }}/edit"><button>Edit details</button></a>
+                    <a href="/bookings/{{ booking.id }}/delete"><button class="delete-button">Delete</button></a></td>
+                </tr>
+            {% endfor %}
+            </table>   
+    </fieldset>
+{% endblock content %}
+
+
+
+<!-- <ul aria-label="booking column headings">
         <li>Class name</li>
         <li>Member</li>
         <li>Class date</li>
@@ -38,7 +73,6 @@
         <li>Created by</li>
         <li>Timestamp</li>
     </ul>
-    <hr> <!-- probs remove and style with css -->
     <ul>
     {% for booking in bookings %}
         <li>
@@ -53,7 +87,5 @@
             <a href="/bookings/{{ booking.id }}/delete"><button>Delete ❌ </button></a>
 
         </li>
-        <hr> <!-- probs remove and style with css -->
     {% endfor %}
-    </ul>
-{% endblock content %}
+    </ul> -->
