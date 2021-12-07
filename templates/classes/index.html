@@ -2,42 +2,43 @@
 
 {% block content %}
     
-    <h1>Classes</h1>
+    <h2 class="page-title">Classes<span class="purple-accent">&#46;</span></h2>
 
-    <h2>Add new class</h2>
-   
-    <form action="/classes/add" method="post">
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name">
-
-        <label for="category">Category:</label>
-        <select name="category" id="category">
-            <option value="sports">Sports</option>
-            <option value="wellness">Wellness</option>
-            <option value="cardio">Cardio</option>
-            <option value="resistance">Resistance</option>
-            <option value="dance">Dance</option>
-        </select>
-
-        <label for="instructor">Instructor:</label>
-        <select name="instructor" id="instructor">
-            <option value="Patches O'Hoolihan">Patches O'Hoolihan</option>
-            <option value="Cotton McKnight">Cotton McKnight</option>
-            <option value="Pepper Brooks">Pepper Brooks</option>
-        </select>
-
-        <label for="date">Date:</label>
-        <input type="date" name="date" id="date">
-
-        <label for="time">Time:</label>
-        <input type="time" name="time" id="time">
-
-        <label for="location">Location:</label>
-        <input type="text" name="location" id="location">
-
-        <button type="submit">Add class</button>
-    </form>
+    <fieldset class="container">
+        <legend class="container-title">Add new class</legend>
     
+        <form class="container-content-form" action="/classes/add" method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
+
+            <label for="location">Location:</label>
+            <input type="text" name="location" id="location">
+
+            <label for="category">Category:</label>
+            <select name="category" id="category">
+                <option value="sports">Sports</option>
+                <option value="wellness">Wellness</option>
+                <option value="cardio">Cardio</option>
+                <option value="resistance">Resistance</option>
+                <option value="dance">Dance</option>
+            </select>
+
+            <label for="date">Date:</label>
+            <input type="date" name="date" id="date">
+
+            <label for="instructor">Instructor:</label>
+            <select name="instructor" id="instructor">
+                <option value="Patches O'Hoolihan">Patches O'Hoolihan</option>
+                <option value="Cotton McKnight">Cotton McKnight</option>
+                <option value="Pepper Brooks">Pepper Brooks</option>
+            </select>
+
+            <label for="time">Time:</label>
+            <input type="time" name="time" id="time">
+
+            <button type="submit">Add class</button>
+        </form>
+    </fieldset>
 
     <h2>Classes: </h2>
     <ul>

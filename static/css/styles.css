@@ -210,7 +210,7 @@ button.delete-button {
     grid-column: 4; 
 }
 
-input#dob {
+input#dob, select, input#date, input#time {
     width: fit-content;
 }
 
