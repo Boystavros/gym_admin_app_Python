@@ -2,28 +2,31 @@
 
 {% block content %}
     
-<h1>Edit details for {{ member.first_name }} {{ member.last_name }}</h1>
+    <h2 class="page-title">Edit member details<span class="purple-accent">&#46;</span></h2>
+        
+    <fieldset class="container">    
+        <legend class="container-title">Edit details for {{ member.first_name }} {{ member.last_name }}</legend>
 
-<form action="/members/update/{{ member.id }}" method="post">
-    <label for="first_name">First name:</label>
-    <input type="text" name="first_name" id="first_name" value="{{ member.first_name }}">
+        <form class="container-content-form" action="/members/update/{{ member.id }}" method="post">
+            <label for="first_name">First name:</label>
+            <input type="text" name="first_name" id="first_name" value="{{ member.first_name }}">
 
-    <label for="last_name">Last name:</label>
-    <input type="text" name="last_name" id="last_name" value="{{ member.last_name }}">
+            <label for="last_name">Last name:</label>
+            <input type="text" name="last_name" id="last_name" value="{{ member.last_name }}">
 
-    <label for="dob">Date of birth:</label>
-    <input type="date" name="dob" id="dob" value="{{ member.dob }}">
+            <label for="dob">Date of birth:</label>
+            <input type="date" name="dob" id="dob" value="{{ member.dob }}">
 
-    <label for="title">Title:</label>
-    <input type="text" name="title" id="title" value="{{ member.title }}">
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" value="{{ member.title }}">
 
-    <label for="pronouns">Pronouns:</label>
-    <input type="text" name="pronouns" id="pronouns" value="{{ member.pronouns }}">
+            <label for="pronouns">Pronouns:</label>
+            <input type="text" name="pronouns" id="pronouns" value="{{ member.pronouns }}">
 
-    <label for="notes">Notes:</label>
-    <textarea name="notes" id="notes" cols="30" rows="2">{{ member.notes }}</textarea>
+            <label for="notes">Notes:</label>
+            <textarea name="notes" id="notes" cols="30" rows="2">{{ member.notes }}</textarea>
 
-    <button type="submit">Update details</button>
-</form>
-
+            <button type="submit">Update details</button>
+        </form>
+    </fieldset>
 {% endblock content %}
