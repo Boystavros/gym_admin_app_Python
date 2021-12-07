@@ -17,6 +17,7 @@ body {
     color: #000000;
     background-image: url(/static/images/goodman_bull.jpeg);
     background-size: cover;
+    /* background-position: 0% -40%; Offset for weight gym backG */
 }
 
 .purple-accent {
@@ -264,7 +265,7 @@ form#create-booking.container-content-form button, form#edit-booking.container-c
     grid-column: 4;
 }
 
-input#dob, select, input#date, input#time, input#name, input#location{
+input#dob, select, input#date, input#time, input#name, input#location {
     width: fit-content;
 }
 
