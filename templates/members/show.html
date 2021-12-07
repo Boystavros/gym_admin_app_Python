@@ -2,30 +2,36 @@
 
 {% block content %}
 
-    <h1>Member details</h1><br> <!-- Remove this space when doing CSS -->
+    <h2 class="page-title">Member details<span class="purple-accent">&#46;</span></h2>
 
-    <p>Membership number: {{ member.id }}</p>
-    <p>Title: {{ member.title }}</p>
-    <p>Pronouns: {{ member.pronouns }}</p>
-    <p>{{ member.last_name }}, {{ member.first_name }}</p>
-    <p>Date of birth: {{ member.dob }}</p>
-    <p>Notes: {{ member.notes }}</p>
+    <fieldset class="container">
+        <legend class="container-title">{{ member.last_name }}, {{ member.first_name }}</legend>
+        <div class="container-content-details">   
+            <p>Title: {{ member.title }}</p>
+            <p>Pronouns: {{ member.pronouns }}</p>
+            <p>Date of birth: {{ member.dob }}</p>
+            <p>Membership number: {{ member.id }}</p>
+            <p>Notes: {{ member.notes }}</p>
+            <div class="buttons-pane">
+                <a href="/members/{{ member.id }}/edit"><button>Edit details</button></a>
+                <a href="/members/{{ member.id }}/delete"><button class="delete-button">Delete</button></a>
+            </div>
+        </div>
+    </fieldset>
 
-    <a href="/members/{{ member.id }}/edit"><button>Edit details</button></a>
-    <a href="/members/{{ member.id }}/delete"><button> Delete ❌ </button></a>
-
-    <h2>Member's bookings:</h2>
-
-    <ul>
-    {% for booking in bookings %}
-        <li>
-            <p>{{ booking.fit_class.name }}</p>
-            <p>{{ booking.fit_class.date }}</p>
-            <p>{{ booking.fit_class.time }}</p>
-            <a href="/bookings/{{ booking.id }}/edit"><button>Edit booking</button></a>
-            <a href="/bookings/{{ booking.id }}/delete"><button>Delete ❌ </button></a>           
-        </li>
-        <hr>
-    {% endfor %}
-    </ul>
+    <fieldset class="container">
+        <legend class="container-title">Member's bookings:</legend>
+        <ul class="container-content-tiles">
+        {% for booking in bookings %}
+            <li>
+                <p>{{ booking.fit_class.name }}</p>
+                <p>{{ booking.fit_class.date }}</p>
+                <p>{{ booking.fit_class.time }}</p>
+                <div class="buttons-pane">    
+                    <a href="/bookings/{{ booking.id }}/edit"><button>Edit booking</button></a>
+                    <a href="/bookings/{{ booking.id }}/delete"><button class="delete-button">Delete</button></a> 
+                </div>          
+            </li>
+        {% endfor %}
+        </ul>
 {% endblock content %}

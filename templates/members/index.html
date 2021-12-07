@@ -6,7 +6,7 @@
     <fieldset class="container">
     <legend class="container-title">Add new member</legend>
 
-        <form class="container-content" id="add-member" action="/members/add_member" method="post">
+        <form class="container-content-form" action="/members/add_member" method="post">
             
             <label for="first_name">First name:</label>
             <input type="text" name="first_name" id="first_name">
@@ -32,7 +32,7 @@
 
     <fieldset class="container">
         <legend class="container-title">Current Members</legend>
-        <ul class="container-content">
+        <ul class="container-content-tiles">
             {% for member in members %}
                 <li><a href="/members/{{ member.id }}">{{ member.last_name }}, {{ member.first_name }}</a></li>
             {% endfor %}

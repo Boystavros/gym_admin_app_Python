@@ -107,10 +107,11 @@ main {
     text-align: left;
     background-color: white;
     padding-bottom: 2rem;
+    font-size: 1.1rem;
 }
 
 input {
-    text-align: right;
+    text-align: left;
 }
 
 button {
@@ -118,8 +119,17 @@ button {
     color: white;
     font-weight: bolder;
     width: fit-content;
+    height:1.5rem;
     justify-self: end;
+    cursor: pointer;
 }
+
+button.delete-button {
+    background-color: #ca2305;
+    border-color: #ca2305;
+}
+
+
 
 /* Content */
 
@@ -148,7 +158,7 @@ button {
     background-color: white;
 }
 
-.container-content {
+.container-content-tiles {
     max-width: 100%;
     margin: 1.5rem;
     display: grid;
@@ -157,8 +167,7 @@ button {
     column-gap: 1.5rem;
 }
 
-.container li {
-    font-size: 1rem;
+.container-content-tiles li {
     text-align: left;
     line-height: 2;
     width: auto;
@@ -173,7 +182,11 @@ button {
 
 /* container forms */
 
-#add-member {
+.container-content-form {
+    max-width: 100%;
+    margin: 1.5rem;
+    display: grid;
+    row-gap: 1.5rem;
     grid-template-columns: 1fr 2fr 1fr 2fr;
     column-gap: 5px;
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -181,10 +194,30 @@ button {
     font-size: 1.5rem;
 }
 
-#add-member button {
+.container-content-form input textarea {
+    width: fit-content;
+    width: 50ch;
+}
+
+.container-content-form button {
     grid-row: 4;
     grid-column: 4; 
 }
+
+input#dob {
+    width: fit-content;
+}
+
+/* container lists */
+
+.container-content-details {
+    max-width: 100%;
+    margin: 1.5rem;
+    display: grid;
+    row-gap: 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 
 /* footer */
 
