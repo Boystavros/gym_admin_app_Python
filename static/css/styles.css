@@ -23,6 +23,7 @@ body {
     color: #762fb9;
 }
 
+
 /* Header and nav styling */
 
 header {
@@ -112,6 +113,11 @@ main {
 
 input {
     text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 button {
