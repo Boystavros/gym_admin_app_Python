@@ -1,7 +1,7 @@
 /* use these initial values
 purple color = #762fb9;
 orange color = #f67a06;
-grey = 
+page title and footer dark grey = #353434;
 
 }
 */
@@ -10,10 +10,6 @@ grey =
 /* html {
     background-color: blueviolet;
 } */
-
-footer {
-    
-}
 
 body {
     font-family: 'Oswald', sans-serif;
@@ -162,4 +158,13 @@ main {
     font-weight: bolder;
 }
 
-
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #353434;
+    align-items: center;
+    padding: 1rem 10%;
+    color: #762fb9;
+    border-top: 1px solid black;
+}
