@@ -11,12 +11,14 @@ grey =
     background-color: blueviolet;
 } */
 
+footer {
+    
+}
+
 body {
     font-family: 'Oswald', sans-serif;
-    /* width: 80vw; */
     margin: auto;
     color: #000000;
-    /* padding-top: 1rem; */
     background-image: url(/static/images/goodman_bull.jpeg);
     background-size: cover;
 }
@@ -107,6 +109,7 @@ main {
     margin-top: 3rem;
     text-align: left;
     background-color: white;
+    padding-bottom: 2rem;
 }
 
 /* Content */
@@ -130,7 +133,8 @@ main {
 }
 
 .container {
-    margin: 3rem 0;
+    margin: 2rem 2rem;
+    margin-bottom: 0rem;
     border: 2px solid #111111;
     background-color: white;
 }
