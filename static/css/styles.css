@@ -21,7 +21,9 @@ body {
     background-size: cover;
 }
 
-
+.purple-accent {
+    color: #762fb9;
+}
 
 /* Header and nav styling */
 
@@ -101,23 +103,24 @@ main a:hover {
 main {
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 1rem;
-    padding: 1rem;
+    margin-top: 3rem;
+    /* padding: 1rem; */
     text-align: left;
+    background-color: white;
 }
 
 /* Content */
 
 .page-title {
     font-size: 2.5rem;
-    text-align: center;
+    text-align: left;
+    align-items: baseline;
     font-weight: 500;
-    margin: 1rem 0 2rem;
-    color: #111111;
-    background-color: white;
-    border: 2px black solid; 
-    width: fit-content;
-    padding: 0.2em 0.8em; 
+    /* margin: 1rem 0 2rem; */
+    color: white;
+    background-color: #353434;
+    /* padding: 0.2em 0.8em;  */
+    padding: 1rem 1rem;
 }
 
 .container-title {
