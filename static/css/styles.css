@@ -200,9 +200,8 @@ button.delete-button {
     font-size: 1.5rem;
 }
 
-/* #book-class {
-    grid-template-rows: 1fr 1fr;
-} */
+
+
 
 .container-content-form input textarea {
     width: fit-content;
@@ -212,6 +211,15 @@ button.delete-button {
 .container-content-form button {
     grid-row: 4;
     grid-column: 4; 
+}
+
+form#book-class.container-content-form {
+    grid-template-rows: unset;
+}
+
+form#book-class.container-content-form button {
+    grid-row: -1/-1;
+    grid-column: -1/-1;
 }
 
 input#dob, select, input#date, input#time {
