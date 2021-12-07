@@ -90,13 +90,13 @@ header a:hover {
 /* Main links */
 
 main a {
-}
-
-main a:visited {
+    color:  #762fb9;
 }
 
 main a:hover {
+    color: #f67a06;
 }
+
 
 main {
     margin-left: 10%;
