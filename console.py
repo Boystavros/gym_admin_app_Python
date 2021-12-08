@@ -13,6 +13,9 @@ import repositories.booking_repository as booking_repository
 import repositories.instructor_repository as instructor_repository
 
 booking_repository.delete_all()
+member_repository.delete_all()
+fit_class_repository.delete_all()
+instructor_repository.delete_all()
 
 #Seed member data
 member1 = Member("Justin", "Long", "01-01-1982", "Mr", "he/him", "Allergies") #date must be in yyyy-mm-dd format
@@ -58,13 +61,13 @@ instructor_repository.save(instructor6)
 
 #Seed class data
 fit_class1 = Fit_class("Dodgeball", "Sport", instructor1, "07-12-2021", "12:00", "Dodgeball pitch")
-# fit_class_repository.save(fit_class1)
+fit_class_repository.save(fit_class1)
 
 fit_class2 = Fit_class("Wrench Yoga", "Wellness", instructor2, "05-12-2021", "11:00", "Gym hall")
-# fit_class_repository.save(fit_class2)
+fit_class_repository.save(fit_class2)
 
 fit_class3 = Fit_class("Balls, balls, balls", "Cardio", instructor3, "07-12-2021", "11:00", "Gym hall")
-# fit_class_repository.save(fit_class3)
+fit_class_repository.save(fit_class3)
 
 fit_class4 = Fit_class("Team dance", "Dance", instructor4, "07-12-2021", "18:00", "Dance studio")
 fit_class_repository.save(fit_class4)

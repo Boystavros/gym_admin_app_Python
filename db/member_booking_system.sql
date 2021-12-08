@@ -23,7 +23,7 @@ CREATE TABLE fit_classes(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     category VARCHAR(255),
-    instructor INT REFERENCES instructors(id) ON DELETE CASCADE,
+    instructor_id INT REFERENCES instructors(id) ON DELETE CASCADE,
     date VARCHAR(255),
     time VARCHAR(255),
     location VARCHAR(255)

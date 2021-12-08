@@ -1,11 +1,13 @@
 from db.run_sql import run_sql
 from models.fit_class import Fit_class
+from models.instructor import Instructor
+import repositories.instructor_repository as instructor_repository
 
 
 #CREATE
 def save(fit_class):
-    sql = "INSERT INTO fit_classes (name, category, instructor, date, time, location) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
-    values = [fit_class.name, fit_class.category, fit_class.instructor, fit_class.date, fit_class.time, fit_class.location]
+    sql = "INSERT INTO fit_classes (name, category, instructor_id, date, time, location) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
+    values = [fit_class.name, fit_class.category, fit_class.instructor.id, fit_class.date, fit_class.time, fit_class.location]
     results = run_sql(sql, values)
     id =  results[0]['id']
     fit_class.id = id
@@ -21,7 +23,7 @@ def select_all():
     for row in results:
         name = row['name']
         category = row['category']
-        instructor = row['instructor']
+        instructor = instructor_repository.select(row['instructor_id'])
         date = row['date']
         time = row['time']
         location = row['location']
@@ -38,7 +40,8 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        fit_class = Fit_class(result['name'], result['category'], result['instructor'], result['date'], result['time'], result['location'], id)
+        instructor = instructor_repository.select(result['instructor_id'])
+        fit_class = Fit_class(result['name'], result['category'], instructor, result['date'], result['time'], result['location'], id)
     return fit_class
 
 def select_for_edit(id):
@@ -54,13 +57,16 @@ def select_for_edit(id):
         month = display_date[3:5]
         year = display_date[6:10]
         picker_date = f"{year}-{month}-{day}"
-        fit_class = Fit_class(result['name'], result['category'], result['instructor'], picker_date, result['time'], result['location'], id)
+        
+        instructor = instructor_repository.select(result['instructor_id'])
+        
+        fit_class = Fit_class(result['name'], result['category'], instructor, picker_date, result['time'], result['location'], id)
     return fit_class
 
 #UPDATE
 def update(fit_class):
-    sql = "UPDATE fit_classes SET (name, category, instructor, date, time, location) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [fit_class.name, fit_class.category, fit_class.instructor, fit_class.date, fit_class.time, fit_class.location, fit_class.id]
+    sql = "UPDATE fit_classes SET (name, category, instructor_id, date, time, location) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [fit_class.name, fit_class.category, fit_class.instructor.id, fit_class.date, fit_class.time, fit_class.location, fit_class.id]
     run_sql(sql, values)
 
 #DELETE
