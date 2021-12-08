@@ -12,17 +12,17 @@ import repositories.booking_repository as booking_repository
 
 booking_repository.delete_all()
 
-#Seed member data
-member1 = Member("Justin", "Long", "1982-01-01", "Mr", "he/him", "Allergies") #date must be in yyyy-mm-dd format
+# #Seed member data
+member1 = Member("Justin", "Long", "01-01-1982", "Mr", "he/him", "Allergies") #date must be in yyyy-mm-dd format
 member_repository.save(member1)
 
-member2 = Member("Gordon", "Nohope", "1968-02-20", "Mr", "he/him", "Back injury") #date must be in yyyy-mm-dd format
+member2 = Member("Gordon", "Nohope", "20-02-1968", "Mr", "he/him", "Back injury") #date must be in yyyy-mm-dd format
 member_repository.save(member2)
 
-member3 = Member("Pirate", "Steve", "1657-04-25", "Captain", "he/him") #date must be in yyyy-mm-dd format
+member3 = Member("Pirate", "Steve", "25-04-1695", "Captain", "he/him") #date must be in yyyy-mm-dd format
 member_repository.save(member3)
 
-member4 = Member("Kate", "Veatch", "1980-07-15", "Miss", "she/her") #date must be in yyyy-mm-dd format
+member4 = Member("Kate", "Veatch", "15-07-1979", "Miss", "she/her") #date must be in yyyy-mm-dd format
 member_repository.save(member4)
 
 #Seed class data
@@ -73,6 +73,19 @@ booking_repository.save(booking4)
 # ct = datetime.now()
 # print("current time = ", ct)
 # print(type(ct))
+
+#format date input
+
+# date = "2021-12-02"
+# print(date)
+# year = date[0:4]
+# month = date[5:7]
+# day = date[8:10]
+# formatted_date = f"{day}-{month}-{year}"
+# print(formatted_date)
+# print(f"{day}-{month}-{year}")
+
+
 
 #TEST booking by... functions
 # print(booking_repository.bookings_by_member(member1)[0].__dict__)

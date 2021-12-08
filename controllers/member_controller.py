@@ -14,9 +14,14 @@ def members():
 
 @members_blueprint.route("/members/add_member", methods=['POST'])
 def create_member():
+    unformatted_dob = request.form['dob']
+    year = unformatted_dob[0:4]
+    month = unformatted_dob[5:7]
+    day = unformatted_dob[8:10]
+    dob = f"{day}-{month}-{year}"
+    
     first_name = request.form['first_name']
     last_name = request.form['last_name']
-    dob = request.form['dob']
     title = request.form['title']
     pronouns = request.form['pronouns']
     notes = request.form['notes']
