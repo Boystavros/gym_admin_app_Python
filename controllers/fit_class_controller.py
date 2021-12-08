@@ -8,6 +8,7 @@ from models.fit_class import Fit_class
 import repositories.fit_class_repository as fit_class_repository
 import repositories.member_repository as member_repository
 import repositories.booking_repository as booking_repository
+import repositories.instructor_repository as instructor_repository
 
 fit_classes_blueprint = Blueprint("fit_classes", __name__)
 
@@ -37,6 +38,7 @@ def add_class():
 def show(id):
     # pdb.set_trace()
     members = member_repository.select_all()
+    # instructors = 
     fit_class = fit_class_repository.select(id)
     # attendees = member_repository.attendees(fit_class)
     bookings = booking_repository.bookings_by_class(fit_class)
