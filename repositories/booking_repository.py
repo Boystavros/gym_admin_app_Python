@@ -17,7 +17,7 @@ def save(booking):
 def select_all():
     bookings = []
 
-    sql = "SELECT * FROM bookings ORDER BY timestamp DESC"
+    sql = "SELECT * FROM bookings INNER JOIN members ON bookings.member_id = members.id INNER JOIN fit_classes ON bookings.fit_class_id = fit_classes.id ORDER BY bookings.timestamp DESC"
     results = run_sql(sql)
 
     for row in results:
