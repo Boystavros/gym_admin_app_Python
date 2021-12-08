@@ -26,16 +26,16 @@ member4 = Member("Kate", "Veatch", "15-07-1979", "Miss", "she/her") #date must b
 member_repository.save(member4)
 
 #Seed class data
-fit_class1 = Fit_class("Dodgeball", "Sport", "Cotton McKnight", "2021-12-07", "12:00", "Dodgeball pitch")
+fit_class1 = Fit_class("Dodgeball", "Sport", "Cotton McKnight", "07-12-2021", "12:00", "Dodgeball pitch")
 fit_class_repository.save(fit_class1)
 
-fit_class2 = Fit_class("Wrench Yoga", "Wellness", "Patches O'Hoolihan", "2021-12-05", "11:00", "Gym hall")
+fit_class2 = Fit_class("Wrench Yoga", "Wellness", "Patches O'Hoolihan", "05-12-2021", "11:00", "Gym hall")
 fit_class_repository.save(fit_class2)
 
-fit_class3 = Fit_class("Balls, balls, balls", "Cardio", "Peter La Fleur", "2021-12-07", "11:00", "Gym hall")
+fit_class3 = Fit_class("Balls, balls, balls", "Cardio", "Peter La Fleur", "07-12-2021", "11:00", "Gym hall")
 fit_class_repository.save(fit_class3)
 
-fit_class4 = Fit_class("Team dance", "Dance", "White Goodman", "2021-12-07", "18:00", "Dance studio")
+fit_class4 = Fit_class("Team dance", "Dance", "White Goodman", "07-12-2021", "18:00", "Dance studio")
 fit_class_repository.save(fit_class4)
 
 #Seed booking data

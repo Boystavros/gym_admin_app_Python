@@ -41,6 +41,21 @@ def select(id):
         fit_class = Fit_class(result['name'], result['category'], result['instructor'], result['date'], result['time'], result['location'], id)
     return fit_class
 
+def select_for_edit(id):
+    fit_class = None
+
+    sql = "SELECT * FROM fit_classes WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        display_date = result['date']
+        day = display_date[0:2]
+        month = display_date[3:5]
+        year = display_date[6:10]
+        picker_date = f"{year}-{month}-{day}"
+        fit_class = Fit_class(result['name'], result['category'], result['instructor'], picker_date, result['time'], result['location'], id)
+    return fit_class
 
 #UPDATE
 def update(fit_class):

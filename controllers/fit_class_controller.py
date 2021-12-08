@@ -1,3 +1,4 @@
+from datetime import date
 import pdb
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
@@ -17,10 +18,15 @@ def fit_classes():
 
 @fit_classes_blueprint.route("/classes/add", methods=['POST'])
 def add_class():
+    unformatted_date = request.form['date']
+    year = unformatted_date[0:4]
+    month = unformatted_date[5:7]
+    day = unformatted_date[8:10]
+    date = f"{day}-{month}-{year}"
+
     name = request.form['name']
     category = request.form['category']
     instructor = request.form['instructor']
-    date = request.form['date']
     time = request.form['time']
     location = request.form['location']
     fit_class = Fit_class(name, category, instructor, date, time, location)
@@ -43,15 +49,20 @@ def delete(id):
 
 @fit_classes_blueprint.route("/classes/<id>/edit")
 def edit_details(id):
-    fit_class = fit_class_repository.select(id)
+    fit_class = fit_class_repository.select_for_edit(id)
     return render_template("classes/edit.html", fit_class=fit_class)
 
 @fit_classes_blueprint.route("/classes/update/<id>", methods=['POST'])
 def update(id):
+    unformatted_date = request.form['date']
+    year = unformatted_date[0:4]
+    month = unformatted_date[5:7]
+    day = unformatted_date[8:10]
+    date = f"{day}-{month}-{year}"
+
     name = request.form['name']
     category = request.form['category']
     instructor = request.form['instructor']
-    date = request.form['date']
     time = request.form['time']
     location = request.form['location']
     fit_class = Fit_class(name, category, instructor, date, time, location, id)
