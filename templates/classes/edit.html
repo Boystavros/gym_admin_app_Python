@@ -16,15 +16,12 @@
 
             <label for="instructor">Instructor:</label>
             <select name="instructor" id="instructor">
-                <option value="patches" {% if fit_class.instructor == "Patches O'Hoolihan" %}
-                selected="selected"
-            {% endif %}>Patches O'Hoolihan</option>
-                <option value="cotton" {% if fit_class.instructor == "Cotton McKnight" %}
-                selected="selected"
-            {% endif %}>Cotton McKnight</option>
-                <option value="pepper" {% if fit_class.instructor == "Pepper Brooks" %}
-                selected="selected"
-            {% endif %}>Pepper Brooks</option>
+                {% for instructor in instructors %}
+                    <option value="{{ instructor.id }}" {% if fit_class.instructor.name == "{{ instructor.name }}" %}
+                    selected="selected"
+                {% endif %}>{{ instructor.name }}</option>
+                    
+                {% endfor %}
             </select>
 
             <label for="date">Date:</label>

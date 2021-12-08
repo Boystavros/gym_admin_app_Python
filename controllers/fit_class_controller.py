@@ -53,7 +53,8 @@ def delete(id):
 @fit_classes_blueprint.route("/classes/<id>/edit")
 def edit_details(id):
     fit_class = fit_class_repository.select_for_edit(id)
-    return render_template("classes/edit.html", fit_class=fit_class)
+    instructors = instructor_repository.select_all()
+    return render_template("classes/edit.html", fit_class=fit_class, instructors=instructors)
 
 @fit_classes_blueprint.route("/classes/update/<id>", methods=['POST'])
 def update(id):
@@ -65,7 +66,7 @@ def update(id):
 
     name = request.form['name']
     category = request.form['category']
-    instructor = request.form['instructor']
+    instructor = instructor_repository.select(request.form['instructor'])
     time = request.form['time']
     location = request.form['location']
     fit_class = Fit_class(name, category, instructor, date, time, location, id)
