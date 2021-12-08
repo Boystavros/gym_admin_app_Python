@@ -19,7 +19,7 @@ def save(member):
 def select_all():
     members = []
 
-    sql = "SELECT * FROM members"
+    sql = "SELECT * FROM members ORDER BY last_name ASC, first_name ASC"
     results = run_sql(sql)
 
     for row in results:
