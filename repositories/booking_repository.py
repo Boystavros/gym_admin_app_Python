@@ -72,7 +72,7 @@ def bookings_by_member(member):
 def bookings_by_class(fit_class):
     bookings = []
     
-    sql = "SELECT * FROM bookings WHERE fit_class_id = %s"
+    sql = "SELECT bookings.id, members.last_name, members.first_name FROM bookings INNER JOIN members ON bookings.member_id = members.id WHERE fit_class_id = %s ORDER BY members.first_name ASC, members.last_name ASC"
     values = [fit_class.id]
     results = run_sql(sql, values)
 
