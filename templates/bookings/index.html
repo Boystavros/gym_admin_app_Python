@@ -51,7 +51,7 @@
                     <td>{{ booking.member.first_name }} {{ booking.member.last_name }}</td>
                     <td>{{ booking.fit_class.date }}</td>
                     <td>{{ booking.fit_class.time }}</td>
-                    <td>{{ booking.fit_class.instructor }}</td>
+                    <td>{{ booking.fit_class.instructor.name }}</td>
                     <td>{{ booking.staff_member }}</td>
                     <td>{{ booking.timestamp }}</td>
                     <td><a href="/bookings/{{ booking.id }}/edit"><button>Edit details</button></a>
