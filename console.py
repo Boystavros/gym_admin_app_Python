@@ -3,6 +3,7 @@ import time
 from datetime import datetime
 from controllers.member_controller import update
 from models.booking import Booking
+from models.instructor import Instructor
 from models.member import Member
 from models.fit_class import Fit_class
 
@@ -12,7 +13,7 @@ import repositories.booking_repository as booking_repository
 
 booking_repository.delete_all()
 
-# #Seed member data
+#Seed member data
 member1 = Member("Justin", "Long", "01-01-1982", "Mr", "he/him", "Allergies") #date must be in yyyy-mm-dd format
 member_repository.save(member1)
 
@@ -24,6 +25,9 @@ member_repository.save(member3)
 
 member4 = Member("Kate", "Veatch", "15-07-1979", "Miss", "she/her") #date must be in yyyy-mm-dd format
 member_repository.save(member4)
+
+#Seed instructor data
+instructor1 = Instructor("Me'Shell Jones")
 
 #Seed class data
 fit_class1 = Fit_class("Dodgeball", "Sport", "Cotton McKnight", "07-12-2021", "12:00", "Dodgeball pitch")

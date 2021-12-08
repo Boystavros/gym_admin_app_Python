@@ -1,6 +1,13 @@
 DROP TABLE IF EXISTS bookings;
-DROP TABLE IF EXISTS members;
 DROP TABLE IF EXISTS fit_classes;
+DROP TABLE IF EXISTS members;
+DROP TABLE IF EXISTS instructors;
+
+
+CREATE TABLE instructors(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255)
+);
 
 CREATE TABLE members(
     id SERIAL PRIMARY KEY,
@@ -16,7 +23,7 @@ CREATE TABLE fit_classes(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     category VARCHAR(255),
-    instructor VARCHAR(255),
+    instructor INT REFERENCES instructors(id) ON DELETE CASCADE,
     date VARCHAR(255),
     time VARCHAR(255),
     location VARCHAR(255)
