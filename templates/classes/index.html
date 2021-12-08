@@ -27,9 +27,9 @@
 
             <label for="instructor">Instructor:</label>
             <select name="instructor" id="instructor">
-                <option value="Patches O'Hoolihan">Patches O'Hoolihan</option>
-                <option value="Cotton McKnight">Cotton McKnight</option>
-                <option value="Pepper Brooks">Pepper Brooks</option>
+                {% for instructor in instructors %}
+                <option value="{{ instructor.id }}">{{ instructor.name }}</option>               
+                {% endfor %}
             </select>
 
             <label for="time">Time:</label>
@@ -46,6 +46,7 @@
                 <a href="/classes/{{ fit_class.id }}">{{ fit_class.name }}</a>
                 <p>{{ fit_class.date }}</p>
                 <p>{{ fit_class.time }}</p>
+                <p>{{ fit_class.instructor.name }}</p>
             </li>    
         {% endfor %}
         </ul>
