@@ -31,7 +31,6 @@
         </form>
     </fieldset>
 
-    <!-- <button id="search bookings"><a href="/bookings/show_bookings">Search bookings</a></button> -->
     <fieldset class="container">    
         <legend class="container-title">Bookings</legend>
             <table class="container-content-table">
@@ -62,30 +61,3 @@
     </fieldset>
 {% endblock content %}
 
-
-
-<!-- <ul aria-label="booking column headings">
-        <li>Class name</li>
-        <li>Member</li>
-        <li>Class date</li>
-        <li>Class time</li>
-        <li>Instructor</li>
-        <li>Created by</li>
-        <li>Timestamp</li>
-    </ul>
-    <ul>
-    {% for booking in bookings %}
-        <li>
-            <p>{{ booking.fit_class.name }}</p>
-            <p>{{ booking.member.first_name }} {{ booking.member.last_name }}</p>
-            <p>{{ booking.fit_class.date }}</p>
-            <p>{{ booking.fit_class.time }}</p>
-            <p>{{ booking.fit_class.instructor }}</p>
-            <p>{{ booking.staff_member }}</p>
-            <p>{{ booking.timestamp }}</p>
-            <a href="/bookings/{{ booking.id }}/edit"><button>Edit details</button></a>
-            <a href="/bookings/{{ booking.id }}/delete"><button>Delete ❌ </button></a>
-
-        </li>
-    {% endfor %}
-    </ul> -->

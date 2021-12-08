@@ -8,7 +8,6 @@ page title and footer dark grey = #353434;
 
 /* Base styling */
 /* html {
-    background-color: blueviolet;
 } */
 
 body {
@@ -17,7 +16,6 @@ body {
     color: #000000;
     background-image: url(/static/images/goodman_bull.jpeg);
     background-size: cover;
-    /* background-position: 0% -40%; Offset for weight gym backG */
 }
 
 .purple-accent {
@@ -196,7 +194,7 @@ button.delete-button:hover {
 }
 
 .container-content-table {
-    margin: 1.5rem;
+    margin: 1.5rem auto;
 }
 
 th, td {
