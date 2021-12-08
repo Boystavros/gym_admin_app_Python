@@ -17,7 +17,7 @@ def save(fit_class):
 def select_all():
     fit_classes = []
 
-    sql = "SELECT * FROM fit_classes"
+    sql = "SELECT * FROM fit_classes ORDER BY date ASC, time ASC"
     results = run_sql(sql)
 
     for row in results:
