@@ -37,6 +37,21 @@ def select(id):
         member = Member(result['first_name'], result['last_name'], result['dob'], result['title'], result['pronouns'], result['notes'], result['id'])
     return member
 
+def select_for_edit(id):
+    member = None
+    sql = "SELECT * FROM members WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        display_dob = result['dob']
+        day = display_dob[0:2]
+        month = display_dob[3:5]
+        year = display_dob[6:10]
+        picker_dob = f"{year}-{month}-{day}"
+        member = Member(result['first_name'], result['last_name'], picker_dob, result['title'], result['pronouns'], result['notes'], result['id'])
+    return member
+
 #UPDATE
 def update(member):
     sql = "UPDATE members SET (first_name, last_name, dob, title, pronouns, notes) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"

@@ -1,3 +1,4 @@
+import pdb
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from flask.helpers import url_for
@@ -37,14 +38,19 @@ def select(id):
 
 @members_blueprint.route("/members/<id>/edit")
 def edit_details(id):
-    member = member_repository.select(id)
+    member = member_repository.select_for_edit(id)
     return render_template("members/edit.html", member = member)
 
 @members_blueprint.route("/members/update/<id>", methods=['POST'])
 def update(id):
+    unformatted_dob = request.form['dob']
+    year = unformatted_dob[0:4]
+    month = unformatted_dob[5:7]
+    day = unformatted_dob[8:10]
+    dob = f"{day}-{month}-{year}"
+
     first_name = request.form['first_name']
     last_name = request.form['last_name']
-    dob = request.form['dob']
     title = request.form['title']
     pronouns = request.form['pronouns']
     notes = request.form['notes']
