@@ -1,0 +1,1 @@
+<h1>Gym Admin Application</h1>
