@@ -21,3 +21,8 @@ The app should show all members that are booked in for a particular class
 Classes could have a maximum capacity, and users can only be added while there is space remaining.
 The gym could be able to give its members Premium or Standard membership. Standard members can only be signed up for classes during off-peak hours.
 The Gym could mark members and classes as active/deactivated. Deactivated members/classes will not appear when creating bookings.
+
+Running instructions:
+- Required software: Python3, Flask, Terminal, NPM, SQL (PostgreSQL)
+- Installation instructions: Download the required software (if not installed already)
+- To run: Set up DB, run console.py to add seed data
