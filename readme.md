@@ -1,43 +1,43 @@
 <h1>Gym Admin Application</h1>
 
+A full-stack gym membership and class booking application built in Python and SQL using Flask, Psycopg2, PostgreSQL and VS Code. 
+
+<h3>The brief:</h3>
+
+Build a piece of software to help a local gym to manage memberships, and register members for classes.
+
+The application allows users to:
+
+- create/edit/delete members 
+- create/edit/delete classes, book members onto classes 
+- display a list of upcoming classes 
+- display all members booked onto a particular class
+
+<!-- <h3> Application demonstration:</h3> -->
+
+
+
+<h2>Set up and run application </h2>
 (Please note, instructions below are for Mac users, different commands may be required by Windows users)
 
 <h3>Software requirements:</h3>
-Donwload the following software in the order shown:
+Download the following software in the order shown:
 
 - Git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git 
 - Python(version 3 or later): https://www.python.org/downloads/
-- Flask: (enter the following from anywhere in Terminal) **'pip install -U Flask'**
+- Flask: (from anywhere in Terminal) enter ``` pip install -U Flask ```
 - Postgres: https://www.postgresql.org/download/
-- Psycopg2: (enter the following from anywhere in Terminal) **'pip install psycopg2'**
+- Psycopg2: (from anywhere in Terminal) enter ``` pip install psycopg2 ```
 
+<h3>Set up:</h3>
 
+- Clone this repository: (navigate to the desired local directory in Terminal) enter ``` git clone XXXXXX ```
+- Create the database: (from anywhere in Terminal) enter ``` dropdb member_booking_system ```,
+  followed by ``` createdb member_booking_system ```
+- Add the database tables: (from within this project's directory in Terminal) enter ``` psql -d member_booking_system -f db/member_booking_system.sql ```
+- Add seed data (optional): (from within this project's directory in Terminal) enter ``` python3 console.py ```
 
-To contain:
-- running instructions for your applications (so other people can clone it and run it)
-- your brief
-- the technologies you used
-- it can also contain screenshots!
+<h3>Run:</h3>
 
-The brief:
-- A local gym has asked you to build a piece of software to help them to manage memberships, and register members for classes.
-
-- MVP
-The app should allow the gym to create and edit Members
-The app should allow the gym to create and edit Classes
-The app should allow the gym to book members on specific classes
-The app should show a list of all upcoming classes
-The app should show all members that are booked in for a particular class
-
-- Possible Extensions
-Classes could have a maximum capacity, and users can only be added while there is space remaining.
-The gym could be able to give its members Premium or Standard membership. Standard members can only be signed up for classes during off-peak hours.
-The Gym could mark members and classes as active/deactivated. Deactivated members/classes will not appear when creating bookings.
-
-Running instructions:
-- Clone this repo using git
-- To run: Set up DB - enter 'dropdb member_booking_system' , 'createdb member_booking_system'
-- To populate DB tables - enter 'psql -d member_booking_system -f db/member_booking_system.sql' from within the member_booking_system folder from this repo.
-- Run console.py to add seed data
-- Enter 'Flask run' to launch Flask server
-- Navigate to 'localhost5000/' to access the home page
+- Launch Flask: (from within this project's directory in Terminal) enter ``` Flask run ```
+- Access homepage: (in browser) enter url ``` localhost:5000/ ```
