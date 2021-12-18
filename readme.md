@@ -16,7 +16,7 @@ The application allows users to:
 
 <h3> Application demonstration:</h3>
 
-[Click here to download a short video demo of the application in use](/static/md_images/app_demo_171221.zip)
+[Click here and select download to download a short video demo of the application in use](/static/md_images/app_demo_171221.zip)
 
 <h2>Set up and run application </h2>
 (Please note, instructions below are for Mac users, different commands may be required by Windows users)
