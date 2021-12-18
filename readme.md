@@ -9,7 +9,8 @@ Build a piece of software to help a local gym to manage memberships, and registe
 The application allows users to:
 
 - create/edit/delete members 
-- create/edit/delete classes, book members onto classes 
+- create/edit/delete classes
+- book members onto classes 
 - display a list of upcoming classes 
 - display all members booked onto a particular class
 
