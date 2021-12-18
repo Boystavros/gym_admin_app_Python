@@ -14,6 +14,8 @@ The application allows users to:
 - display a list of upcoming classes 
 - display all members booked onto a particular class
 
+!["Blogogym home page"](static/md_images/homepage.png)
+
 <h3> Application demonstration:</h3>
 
 [Click here and select download to download a short video demo of the application in use](/static/md_images/app_demo_171221.zip)
