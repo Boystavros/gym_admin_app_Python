@@ -14,9 +14,9 @@ The application allows users to:
 - display a list of upcoming classes 
 - display all members booked onto a particular class
 
-<!-- <h3> Application demonstration:</h3> -->
+<h3> Application demonstration:</h3>
 
-
+!(/static/md_images/app_demo_171221.mov)
 
 <h2>Set up and run application </h2>
 (Please note, instructions below are for Mac users, different commands may be required by Windows users)
@@ -32,7 +32,7 @@ Download the following software in the order shown:
 
 <h3>Set up:</h3>
 
-- Clone this repository: (navigate to the desired local directory in Terminal) enter ``` git clone XXXXXX ```
+- Clone this repository: (navigate to the desired local directory in Terminal) enter ``` git clone https://github.com/Boystavros/solo_project_gym_app.git ```
 - Create the database: (from anywhere in Terminal) enter ``` dropdb member_booking_system ```,
   followed by ``` createdb member_booking_system ```
 - Add the database tables: (from within this project's directory in Terminal) enter ``` psql -d member_booking_system -f db/member_booking_system.sql ```
