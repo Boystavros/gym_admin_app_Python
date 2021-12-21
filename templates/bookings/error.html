@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 class="page-title">Unable to complete request<span class="purple-accent">&#46;</span></h2>
+
+    <fieldset class="container">
+        <legend class="container-title">Error!</legend>
+        <div class="container-content-error">
+            <p>{{ error_message }}</p>
+            <button onclick="history.back()" id="return-button">Return to previous page</button>
+        </div>  
+
+{% endblock content %}

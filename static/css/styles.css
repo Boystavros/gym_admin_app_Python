@@ -284,6 +284,23 @@ input#dob, select, input#date, input#time, input#name, input#location {
     padding: 0.2em 0.8em;
 }
 
+/* container error messages */
+
+.container-content-error {
+    color: #ca2305;
+    font-size: 2rem;
+    text-align: center;
+    align-items: center;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#return-button {
+    margin: 1.5rem;
+}
+
+
 /* footer */
 
 footer {

@@ -9,6 +9,11 @@ import repositories.fit_class_repository as fit_class_repository
 
 bookings_blueprint = Blueprint("bookings", __name__)
 
+error = {
+    0: "Cannot create booking as class is full. Please choose another class.",
+    1: "Cannot update booking as class is full. Booking unchanged."
+}
+
 @bookings_blueprint.route("/bookings")
 def index():
     bookings = booking_repository.select_all()
@@ -24,9 +29,10 @@ def create():
     if fit_class.capacity > fit_class.attendees:
         booking = Booking(member, fit_class, staff_member)
         booking_repository.save(booking)
-    return redirect("/bookings")
-    # else:
-    #     return redirect("/bookings/failed")
+        return redirect("/bookings")
+    else:
+        error_code = 0
+        return redirect(f"/bookings/error/{error_code}")
 
 @bookings_blueprint.route("/bookings/<id>/delete")
 def delete(id):
@@ -50,7 +56,10 @@ def update(id):
     if current_fit_class_id != form_fit_class_id and fit_class.capacity > fit_class.attendees:
         booking = Booking(member, fit_class, staff_member, datetime.now(), id)
         booking_repository.update(booking)
-    return redirect("/bookings")
+        return redirect("/bookings")
+    else:
+        error_code = 1
+        return redirect(f"/bookings/error/{error_code}")
 
 
 @bookings_blueprint.route("/bookings/class/<id>/create", methods=['POST'])
@@ -61,11 +70,18 @@ def class_create(id):
     if fit_class.capacity > fit_class.attendees:
         booking = Booking(member, fit_class, staff_member)
         booking_repository.save(booking)
-    return redirect(f"/classes/{id}")
-    # else:
-    #     return redirect("/bookings/failed")
+        return redirect(f"/classes/{id}")
+    else:
+        error_code = 0
+        return redirect(f"/bookings/error/{error_code}")
+    
 
 @bookings_blueprint.route("/bookings/class<class_id>/<booking_id>/delete")
 def class_delete(class_id, booking_id):
     booking_repository.delete(booking_id)
     return redirect(f"/classes/{class_id}")
+
+@bookings_blueprint.route("/bookings/error/<error_code>")
+def display_error(error_code):
+    error_message = error[int(error_code)]
+    return render_template("/bookings/error.html", error_message=error_message)
