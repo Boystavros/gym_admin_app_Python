@@ -12,6 +12,7 @@
             <p>Category: {{ fit_class.category }}</p>
             <p>Date: {{ fit_class.date }}</p>
             <p>Time: {{ fit_class.time }}</p>
+            <p>Capacity: {{ fit_class.capacity }}</p>
             <div class="buttons-pane">
                 <a href="/classes/{{ fit_class.id }}/edit"><button>Edit details</button></a>
                 <a href="/classes/{{ fit_class.id }}/delete"><button class="delete-button">Delete</button></a>
@@ -37,7 +38,7 @@
         </form>
     </fieldset>
     <fieldset class="container">
-        <legend class="container-title">Attendees</legend>
+        <legend class="container-title">Attendees: {{ fit_class.attendees }} / {{ fit_class.capacity }}</legend>
             <ul class="container-content-tiles">
                 {% for booking in bookings %}
                     <li>

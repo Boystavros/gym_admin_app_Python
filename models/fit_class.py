@@ -10,3 +10,8 @@ class Fit_class:
         self.capacity = capacity
         self.attendees = attendees
         self.id = id
+
+    def increase_attendees(self):
+        self.attendees += 1
+
+        

@@ -259,7 +259,7 @@ form#book-class.container-content-form, form#create-booking.container-content-fo
     grid-template-rows: unset;
 }
 
-form#book-class.container-content-form button {
+form#book-class.container-content-form button, .buttons-pane {
     grid-row: -1/-1;
     grid-column: -1/-1;
 }
