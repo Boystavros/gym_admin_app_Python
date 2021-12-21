@@ -49,6 +49,9 @@
             <label for="time">Time:</label>
             <input type="time" name="time" id="time" value="{{ fit_class.time }}">
 
+            <label for="capacity">Capacity:</label>
+            <input type="number" name="capacity" id="capacity" min="1" max="99" value="{{ fit_class.capacity }}">
+
             <button type="submit">Update details</button>
         
         </form>

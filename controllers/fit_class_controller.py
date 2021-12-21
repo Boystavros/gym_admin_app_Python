@@ -70,7 +70,9 @@ def update(id):
     instructor = instructor_repository.select(request.form['instructor'])
     time = request.form['time']
     location = request.form['location']
-    fit_class = Fit_class(name, category, instructor, date, time, location, id)
+    capacity = request.form['capacity']
+    attendees = fit_class_repository.select(id).attendees
+    fit_class = Fit_class(name, category, instructor, date, time, location, capacity, attendees, id)
     fit_class_repository.update(fit_class)
     return redirect("/fit_classes")
 
