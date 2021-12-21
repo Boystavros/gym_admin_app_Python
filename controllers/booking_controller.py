@@ -43,10 +43,13 @@ def edit(id):
 @bookings_blueprint.route("/bookings/update/<id>", methods=['POST'])
 def update(id):
     member = member_repository.select(request.form['member_id'])
+    current_fit_class_id = booking_repository.select(id).fit_class.id
+    form_fit_class_id = request.form['fit_class_id']
     fit_class = fit_class_repository.select(request.form['fit_class_id'])
     staff_member = request.form['staff_member']
-    booking = Booking(member, fit_class, staff_member, datetime.now(), id)
-    booking_repository.update(booking)
+    if current_fit_class_id != form_fit_class_id and fit_class.capacity > fit_class.attendees:
+        booking = Booking(member, fit_class, staff_member, datetime.now(), id)
+        booking_repository.update(booking)
     return redirect("/bookings")
 
 
