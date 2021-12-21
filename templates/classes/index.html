@@ -50,6 +50,13 @@
                 <p>{{ fit_class.date }}</p>
                 <p>{{ fit_class.time }}</p>
                 <p>{{ fit_class.instructor.name }}</p>
+                {% if fit_class.capacity - fit_class.attendees <= 0 %}
+                    <p>Spaces available: <span class="limited-spaces">Class full</span></p>
+                {% elif fit_class.capacity - fit_class.attendees <= 2 %}
+                    <p>Spaces available: <span class="limited-spaces">{{ fit_class.capacity - fit_class.attendees }}</span></p>
+                {% else %}
+                    <p>Spaces available: {{ fit_class.capacity - fit_class.attendees }}</p>
+                {% endif %}
             </li>    
         {% endfor %}
         </ul>

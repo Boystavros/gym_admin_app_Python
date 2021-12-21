@@ -31,7 +31,8 @@ def add_class():
     instructor = instructor_repository.select(request.form['instructor'])
     time = request.form['time']
     location = request.form['location']
-    fit_class = Fit_class(name, category, instructor, date, time, location)
+    capacity = request.form['capacity']
+    fit_class = Fit_class(name, category, instructor, date, time, location, capacity)
     fit_class_repository.save(fit_class)
     return redirect(url_for('.fit_classes'))
 
