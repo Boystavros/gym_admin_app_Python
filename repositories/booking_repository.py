@@ -1,4 +1,4 @@
-from pdb import run
+import pdb
 from db.run_sql import run_sql
 from models.booking import Booking
 import repositories.member_repository as member_repository
@@ -20,7 +20,7 @@ def save(booking):
 def select_all():
     bookings = []
 
-    sql = "SELECT * FROM bookings INNER JOIN members ON bookings.member_id = members.id INNER JOIN fit_classes ON bookings.fit_class_id = fit_classes.id ORDER BY bookings.timestamp DESC"
+    sql = "SELECT bookings.id, bookings.member_id, bookings.fit_class_id, bookings.staff_member, bookings.timestamp FROM bookings INNER JOIN members ON bookings.member_id = members.id INNER JOIN fit_classes ON bookings.fit_class_id = fit_classes.id ORDER BY bookings.timestamp DESC"
     results = run_sql(sql)
 
     for row in results:
