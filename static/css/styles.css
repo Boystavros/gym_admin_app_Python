@@ -200,7 +200,7 @@ button.delete-button:hover {
 }
 
 .container-content-table {
-    margin: 1.5rem;
+    margin: 1rem auto;
 }
 
 th, td {
