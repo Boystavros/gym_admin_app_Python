@@ -26,7 +26,9 @@ CREATE TABLE fit_classes(
     instructor_id INT REFERENCES instructors(id) ON DELETE CASCADE,
     date VARCHAR(255),
     time VARCHAR(255),
-    location VARCHAR(255)
+    location VARCHAR(255),
+    capacity INT,
+    attendees INT
 );
 
 CREATE TABLE bookings(
