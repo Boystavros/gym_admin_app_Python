@@ -11,6 +11,9 @@ def save(booking):
     result = run_sql(sql, values)
     id = result[0]['id']
     booking.id = id
+    fit_class = fit_class_repository.select(booking.fit_class.id)
+    fit_class.increase_attendees()
+    fit_class_repository.update(fit_class)
     return booking
 
 #READ
@@ -54,6 +57,10 @@ def delete_all():
 def delete(id):
     sql = "DELETE  FROM bookings WHERE id = %s"
     values = [id]
+    booking = select(id)
+    fit_class = fit_class_repository.select(booking.fit_class.id)
+    fit_class.decrease_attendees()
+    fit_class_repository.update(fit_class)
     run_sql(sql, values)
 
 #BOOKINGS BY MEMBER OR CLASS

@@ -16,6 +16,6 @@ class Fit_class:
             self.attendees += 1
 
     def decrease_attendees(self):
-        if self.attendees >= 0:
+        if self.attendees > 0:
             self.attendees -= 1
 

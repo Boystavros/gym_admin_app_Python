@@ -21,11 +21,12 @@ def create():
     member = member_repository.select(request.form['member_id'])
     fit_class = fit_class_repository.select(request.form['fit_class_id'])
     staff_member = request.form['staff_member']
-    booking = Booking(member, fit_class, staff_member)
-    booking_repository.save(booking)
-    fit_class.increase_attendees()
-    fit_class_repository.update(fit_class)
+    if fit_class.capacity > fit_class.attendees:
+        booking = Booking(member, fit_class, staff_member)
+        booking_repository.save(booking)
     return redirect("/bookings")
+    # else:
+    #     return redirect("/bookings/failed")
 
 @bookings_blueprint.route("/bookings/<id>/delete")
 def delete(id):
@@ -54,11 +55,12 @@ def class_create(id):
     member = member_repository.select(request.form['member_id'])
     fit_class = fit_class_repository.select(request.form['fit_class_id'])
     staff_member = request.form['staff_member']
-    booking = Booking(member, fit_class, staff_member)
-    booking_repository.save(booking)
-    fit_class.increase_attendees()
-    fit_class_repository.update(fit_class)
+    if fit_class.capacity > fit_class.attendees:
+        booking = Booking(member, fit_class, staff_member)
+        booking_repository.save(booking)
     return redirect(f"/classes/{id}")
+    # else:
+    #     return redirect("/bookings/failed")
 
 @bookings_blueprint.route("/bookings/class<class_id>/<booking_id>/delete")
 def class_delete(class_id, booking_id):
