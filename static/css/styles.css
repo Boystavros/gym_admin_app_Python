@@ -22,6 +22,11 @@ body {
     color: #762fb9;
 }
 
+.limited-spaces {
+    color:#ca2305;
+    font-weight: bold;
+}
+
 
 /* Header and nav styling */
 

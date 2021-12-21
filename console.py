@@ -63,7 +63,7 @@ instructor_repository.save(instructor6)
 fit_class1 = Fit_class("Dodgeball", "Sport", instructor1, "07-12-2021", "12:00", "Dodgeball pitch", 10)
 fit_class_repository.save(fit_class1)
 
-fit_class2 = Fit_class("Wrench Yoga", "Wellness", instructor2, "05-12-2021", "11:00", "Gym hall", 5)
+fit_class2 = Fit_class("Wrench Yoga", "Wellness", instructor2, "05-12-2021", "11:00", "Gym hall", 2)
 fit_class_repository.save(fit_class2)
 
 fit_class3 = Fit_class("Balls, balls, balls", "Cardio", instructor3, "07-12-2021", "11:00", "Gym hall", 8)
