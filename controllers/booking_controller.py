@@ -23,6 +23,8 @@ def create():
     staff_member = request.form['staff_member']
     booking = Booking(member, fit_class, staff_member)
     booking_repository.save(booking)
+    fit_class.increase_attendees()
+    fit_class_repository.update(fit_class)
     return redirect("/bookings")
 
 @bookings_blueprint.route("/bookings/<id>/delete")
@@ -54,6 +56,8 @@ def class_create(id):
     staff_member = request.form['staff_member']
     booking = Booking(member, fit_class, staff_member)
     booking_repository.save(booking)
+    fit_class.increase_attendees()
+    fit_class_repository.update(fit_class)
     return redirect(f"/classes/{id}")
 
 @bookings_blueprint.route("/bookings/class<class_id>/<booking_id>/delete")

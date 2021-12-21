@@ -12,6 +12,10 @@ class Fit_class:
         self.id = id
 
     def increase_attendees(self):
-        self.attendees += 1
+        if self.attendees < self.capacity:
+            self.attendees += 1
 
-        
+    def decrease_attendees(self):
+        if self.attendees >= 0:
+            self.attendees -= 1
+
