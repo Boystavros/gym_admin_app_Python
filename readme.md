@@ -13,6 +13,8 @@ The application allows users to:
 - book members onto classes 
 - display a list of upcoming classes 
 - display all members booked onto a particular class
+- view class availability (bookings can only be made for classes with available spaces)
+- set membership category (off-peak members can only be booked on to classes at off-peak times)
 
 !["Blogogym home page"](static/md_images/homepage.png)
 
