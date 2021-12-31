@@ -61,8 +61,7 @@ def edit(id):
 @bookings_blueprint.route("/bookings/update/<id>", methods=['POST'])
 def update(id):
     member = member_repository.select(request.form['member_id'])
-    current_fit_class_id = booking_repository.select(id).fit_class.id
-    form_fit_class_id = request.form['fit_class_id']
+    current_fit_class = fit_class_repository.select(booking_repository.select(id).fit_class.id)
     fit_class = fit_class_repository.select(request.form['fit_class_id'])
     staff_member = request.form['staff_member']
 
@@ -75,9 +74,13 @@ def update(id):
         error_code = 3
         return redirect(f"/bookings/error/{error_code}")
     else:
-        if current_fit_class_id != form_fit_class_id and fit_class.capacity > fit_class.attendees:
+        if current_fit_class.id != fit_class.id and fit_class.capacity > fit_class.attendees:
             booking = Booking(member, fit_class, staff_member, datetime.now(), id)
             booking_repository.update(booking)
+            current_fit_class.decrease_attendees()
+            fit_class_repository.update(current_fit_class)
+            fit_class.increase_attendees()
+            fit_class_repository.update(fit_class)
             return redirect("/bookings")
         else:
             error_code = 1
@@ -89,13 +92,23 @@ def class_create(id):
     member = member_repository.select(request.form['member_id'])
     fit_class = fit_class_repository.select(request.form['fit_class_id'])
     staff_member = request.form['staff_member']
-    if fit_class.capacity > fit_class.attendees:
-        booking = Booking(member, fit_class, staff_member)
-        booking_repository.save(booking)
-        return redirect(f"/classes/{id}")
+
+    if ("07:00" < fit_class.time < "0900") or ("17:00" < fit_class.time < "19:00"):
+        peak_class = True
     else:
-        error_code = 0
+        peak_class = False
+
+    if peak_class and member.membership == "off-peak":
+        error_code = 2
         return redirect(f"/bookings/error/{error_code}")
+    else:
+        if fit_class.capacity > fit_class.attendees:
+            booking = Booking(member, fit_class, staff_member)
+            booking_repository.save(booking)
+            return redirect(f"/classes/{id}")
+        else:
+            error_code = 0
+            return redirect(f"/bookings/error/{error_code}")
     
 
 @bookings_blueprint.route("/bookings/class<class_id>/<booking_id>/delete")
