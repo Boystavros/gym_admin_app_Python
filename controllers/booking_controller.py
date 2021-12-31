@@ -11,7 +11,9 @@ bookings_blueprint = Blueprint("bookings", __name__)
 
 error = {
     0: "Cannot create booking as class is full. Please choose another class.",
-    1: "Cannot update booking as class is full. Booking unchanged."
+    1: "Cannot update booking as class is full. Booking unchanged.",
+    2: "Cannot create booking as class is during peak hours. Please upgrade membership category or select off-peak class.",
+    3: "Cannot update booking as class is during peak hours and selected member has off-peak membership. Booking unchanged."
 }
 
 @bookings_blueprint.route("/bookings")
@@ -26,13 +28,23 @@ def create():
     member = member_repository.select(request.form['member_id'])
     fit_class = fit_class_repository.select(request.form['fit_class_id'])
     staff_member = request.form['staff_member']
-    if fit_class.capacity > fit_class.attendees:
-        booking = Booking(member, fit_class, staff_member)
-        booking_repository.save(booking)
-        return redirect("/bookings")
+
+    if ("07:00" < fit_class.time < "0900") or ("17:00" < fit_class.time < "19:00"):
+        peak_class = True
     else:
-        error_code = 0
+        peak_class = False
+
+    if peak_class and member.membership == "off-peak":
+        error_code = 2
         return redirect(f"/bookings/error/{error_code}")
+    else:
+        if fit_class.capacity > fit_class.attendees:
+            booking = Booking(member, fit_class, staff_member)
+            booking_repository.save(booking)
+            return redirect("/bookings")
+        else:
+            error_code = 0
+            return redirect(f"/bookings/error/{error_code}")
 
 @bookings_blueprint.route("/bookings/<id>/delete")
 def delete(id):
@@ -53,13 +65,23 @@ def update(id):
     form_fit_class_id = request.form['fit_class_id']
     fit_class = fit_class_repository.select(request.form['fit_class_id'])
     staff_member = request.form['staff_member']
-    if current_fit_class_id != form_fit_class_id and fit_class.capacity > fit_class.attendees:
-        booking = Booking(member, fit_class, staff_member, datetime.now(), id)
-        booking_repository.update(booking)
-        return redirect("/bookings")
+
+    if ("07:00" < fit_class.time < "0900") or ("17:00" < fit_class.time < "19:00"):
+        peak_class = True
     else:
-        error_code = 1
+        peak_class = False
+
+    if peak_class and member.membership == "off-peak":
+        error_code = 3
         return redirect(f"/bookings/error/{error_code}")
+    else:
+        if current_fit_class_id != form_fit_class_id and fit_class.capacity > fit_class.attendees:
+            booking = Booking(member, fit_class, staff_member, datetime.now(), id)
+            booking_repository.update(booking)
+            return redirect("/bookings")
+        else:
+            error_code = 1
+            return redirect(f"/bookings/error/{error_code}")
 
 
 @bookings_blueprint.route("/bookings/class/<id>/create", methods=['POST'])
