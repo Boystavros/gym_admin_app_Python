@@ -18,25 +18,25 @@ fit_class_repository.delete_all()
 instructor_repository.delete_all()
 
 #Seed member data
-member1 = Member("Justin", "Long", "01-01-1982", "Mr", "he/him", "Allergies") #date must be in yyyy-mm-dd format
+member1 = Member("Justin", "Long", "01-01-1982", "Mr", "he/him", "standard", "Allergies")
 member_repository.save(member1)
 
-member2 = Member("Gordon", "Nohope", "20-02-1968", "Mr", "he/him", "Back injury") #date must be in yyyy-mm-dd format
+member2 = Member("Gordon", "Nohope", "20-02-1968", "Mr", "he/him", "standard", "Back injury")
 member_repository.save(member2)
 
-member3 = Member("Pirate", "Steve", "25-04-1695", "Captain", "he/him") #date must be in yyyy-mm-dd format
+member3 = Member("Pirate", "Steve", "25-04-1695", "Captain", "he/him", "standard")
 member_repository.save(member3)
 
-member4 = Member("Cotton", "McKnight", "15-07-1964", "Mr", "he/him") #date must be in yyyy-mm-dd format
+member4 = Member("Cotton", "McKnight", "15-07-1964", "Mr", "he/him", "standard")
 member_repository.save(member4)
 
-member5 = Member("Suzy", "Nakamura", "15-07-1979", "Mrs", "she/her") #date must be in yyyy-mm-dd format
+member5 = Member("Suzy", "Nakamura", "15-07-1979", "Mrs", "she/her", "standard")
 member_repository.save(member5)
 
-member6 = Member("Pepper", "Brooks", "15-07-1972", "Mr", "he/him") #date must be in yyyy-mm-dd format
+member6 = Member("Pepper", "Brooks", "15-07-1972", "Mr", "he/him", "standard")
 member_repository.save(member6)
 
-member7 = Member("Peter", "La Fleur", "15-07-1974", "Mr", "he/him") #date must be in yyyy-mm-dd format
+member7 = Member("Peter", "La Fleur", "15-07-1974", "Mr", "he/him", "standard")
 member_repository.save(member7)
 
 
