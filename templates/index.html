@@ -17,9 +17,9 @@
                     {% if fit_class.capacity - fit_class.attendees <= 0 %}
                         <p>Spaces available: <span class="limited-spaces">Class full</span></p>
                     {% elif fit_class.capacity - fit_class.attendees <= 2 %}
-                        <p>Spaces available: <span class="limited-spaces">{{ fit_class.capacity - fit_class.attendees }}</span></p>
+                        <p>Spaces available: <span class="limited-spaces">{{ fit_class.capacity - fit_class.attendees }}</span> / {{ fit_class.capacity }}</p>
                     {% else %}
-                        <p>Spaces available: {{ fit_class.capacity - fit_class.attendees }}</p>
+                        <p>Spaces available: {{ fit_class.capacity - fit_class.attendees }} / {{ fit_class.capacity }}</p>
                     {% endif %}
                 </li>    
             {% endfor %}
