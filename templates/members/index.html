@@ -40,7 +40,12 @@
         <legend class="container-title">Current Members</legend>
         <ul class="container-content-tiles">
             {% for member in members %}
-                <li><a href="/members/{{ member.id }}">{{ member.last_name }}, {{ member.first_name }}</a></li>
+                <li>
+                    <a href="/members/{{ member.id }}">{{ member.last_name }}, {{ member.first_name }}</a>
+                    {% if member.membership == "off-peak" %}
+                        <span>(off-peak)</span>
+                    {% endif %}
+                </li>
             {% endfor %}
         </ul>
     </fieldset>
