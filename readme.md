@@ -16,7 +16,15 @@ The application allows users to:
 - view class availability (bookings can only be made for classes with available spaces)
 - set membership category (off-peak members can only be booked on to classes at off-peak times)
 
+<h3> Screenshots </h3>
+
 !["Blogogym home page"](static/md_images/homepage.png)
+
+!["Classes page"](static/md_images/classes.png)
+
+!["Members page"](static/md_images/members.png)
+
+!["Bookings page"](static/md_images/bookings.png)
 
 <h3> Application demonstration:</h3>
 
