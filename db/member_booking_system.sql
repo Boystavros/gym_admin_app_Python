@@ -16,8 +16,8 @@ CREATE TABLE members(
     dob VARCHAR(255),
     title VARCHAR(255),
     pronouns VARCHAR(255),
-    notes TEXT,
-    membership VARCHAR(255)  
+    membership VARCHAR(255),  
+    notes TEXT
 );
 
 CREATE TABLE fit_classes(
