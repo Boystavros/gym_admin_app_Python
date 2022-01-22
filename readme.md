@@ -2,7 +2,7 @@
 
 A full-stack gym membership and class booking application built in Python and SQL using Flask, Psycopg2, PostgreSQL and VS Code. 
 
-<h3>The brief:</h3>
+## The brief
 
 Build a piece of software to help a local gym to manage memberships, and register members for classes.
 
@@ -16,21 +16,17 @@ The application allows users to:
 - view class availability (bookings can only be made for classes with available spaces)
 - set membership category (off-peak members can only be booked on to classes at off-peak times)
 
-<h3> Screenshots </h3>
+## Click on any of the screenshots below for a video demonstration of the app
 
-!["Blogogym home page"](static/md_images/homepage.png)
+[!["Blogogym home page"](static/md_images/homepage.png)](https://youtu.be/LX5g_HEHsVI)
 
-!["Classes page"](static/md_images/classes.png)
+[!["Classes page"](static/md_images/classes.png)](https://youtu.be/LX5g_HEHsVI)
 
-!["Members page"](static/md_images/members.png)
+[!["Members page"](static/md_images/members.png)](https://youtu.be/LX5g_HEHsVI)
 
-!["Bookings page"](static/md_images/bookings.png)
+[!["Bookings page"](static/md_images/bookings.png)](https://youtu.be/LX5g_HEHsVI)
 
-<h3> Application demonstration:</h3>
-
-[Click here and select download to download a short video demo of the application in use](/static/md_images/app_demo_171221.zip)
-
-<h2>Set up and run application </h2>
+## Set up and run application
 (Please note, instructions below are for Mac users, different commands may be required by Windows users)
 
 <h3>Software requirements:</h3>
