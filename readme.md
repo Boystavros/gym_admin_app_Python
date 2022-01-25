@@ -18,13 +18,13 @@ The application allows users to:
 
 ## Click on any of the screenshots below for a video demonstration of the app
 
-[!["Blogogym home page"](static/md_images/homepage.png)](https://youtu.be/smKmo0j7-4U)
+[!["Blogogym home page"](static/md_images/homepage.png)](https://youtu.be/Q5v3C94UklA)
 
-[!["Classes page"](static/md_images/classes.png)](https://youtu.be/smKmo0j7-4U)
+[!["Classes page"](static/md_images/classes.png)](https://youtu.be/Q5v3C94UklA)
 
-[!["Members page"](static/md_images/members.png)](https://youtu.be/smKmo0j7-4U)
+[!["Members page"](static/md_images/members.png)](https://youtu.be/Q5v3C94UklA)
 
-[!["Bookings page"](static/md_images/bookings.png)](https://youtu.be/smKmo0j7-4U)
+[!["Bookings page"](static/md_images/bookings.png)](https://youtu.be/Q5v3C94UklA)
 
 ## Set up and run application
 (Please note, instructions below are for Mac users, different commands may be required by Windows users)
