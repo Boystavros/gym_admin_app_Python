@@ -1,6 +1,6 @@
 <h1>Gym Admin Application</h1>
 
-A full-stack gym membership and class booking application built in Python and SQL using Flask, Psycopg2, PostgreSQL and VS Code. 
+A full-stack gym membership and class booking admin application built in Python and SQL using Flask, Psycopg2, PostgreSQL and VS Code. 
 
 ## The brief
 
